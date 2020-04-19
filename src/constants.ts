@@ -1,0 +1,20 @@
+export const COLORS = [
+  'primary',
+  'primaryLight',
+  'link',
+  'linkLight',
+  'info',
+  'infoLight',
+  'success',
+  'successLight',
+  'warning',
+  'warningLight',
+  'danger',
+  'dangerLight',
+  'white',
+  'light',
+  'dark',
+  'black',
+  'text',
+] as const;
+export const SIZES = ['small', 'normal', 'medium', 'large'] as const;
