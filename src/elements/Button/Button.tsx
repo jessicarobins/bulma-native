@@ -5,20 +5,22 @@ import {
   TouchableOpacity,
   Text,
   TouchableOpacityProps,
-  ViewStyle,
+  TextStyle,
 } from 'react-native';
 import getButtonStyle from './styles';
 
-export type ButtonProps = {
+interface OwnProps {
   children?: React.ReactNode;
   color?: Color;
   loaderColor?: string;
   loading?: boolean;
   rounded?: boolean;
   size?: Size;
-  textStyle?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
   variant?: ButtonVariant;
-} & TouchableOpacityProps;
+}
+
+export type ButtonProps = OwnProps & TouchableOpacityProps;
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {

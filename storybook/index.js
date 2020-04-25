@@ -5,6 +5,7 @@ import './rn-addons';
 
 // import stories
 configure(() => {
+  require('../src/elements/Box/Box.story');
   require('../src/elements/Button/Button.story');
 }, module);
 
