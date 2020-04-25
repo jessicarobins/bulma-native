@@ -1,18 +1,17 @@
-import { colors as baseColors } from '../variables/base';
-import { colors as derivedColors, invertColors } from '../variables/derived';
+import { Theme } from './ThemeProvider';
 
-export const getColor = (color: Nullable<Color>) => {
+export const getColor = (color: Nullable<Color>, theme: Theme) => {
   if (!color) {
     return null;
   }
 
-  return derivedColors[color] || baseColors[color] || null;
+  return theme.derived.colors[color] || theme.base.colors[color] || null;
 };
 
-export const getInvertColor = (color: Nullable<Color>) => {
+export const getInvertColor = (color: Nullable<Color>, theme: Theme) => {
   if (!color) {
     return null;
   }
 
-  return invertColors[color] || null;
+  return theme.derived.invertColors[color] || null;
 };

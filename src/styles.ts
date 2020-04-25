@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { control } from './variables/derived';
+import { control } from './theme/variables/derived';
 import { getTextSize } from './theme/size';
 
 export const getControlStyles = ({ size }: { size: Size }) =>

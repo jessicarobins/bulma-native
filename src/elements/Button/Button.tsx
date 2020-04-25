@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import {
   ActivityIndicator,
   StyleProp,
@@ -8,6 +8,7 @@ import {
   TextStyle,
 } from 'react-native';
 import getButtonStyle from './styles';
+import { ThemeContext } from '../../theme/ThemeProvider';
 
 interface OwnProps {
   children?: React.ReactNode;
@@ -36,13 +37,18 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     variant = 'solid',
     ...rest
   } = props;
-  const buttonStyles = getButtonStyle({
-    color,
-    disabled,
-    rounded,
-    size,
-    variant,
-  });
+  const theme = useContext(ThemeContext);
+
+  const buttonStyles = getButtonStyle(
+    {
+      color,
+      disabled,
+      rounded,
+      size,
+      variant,
+    },
+    theme,
+  );
   const containerStyles = [buttonStyles.container, style];
   const activityIndicatorColor =
     loaderColor || buttonStyles.activityIndicator.color;

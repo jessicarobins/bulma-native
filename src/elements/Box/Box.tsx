@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { Text, View, ViewProps, StyleProp, TextStyle } from 'react-native';
-import styles from './styles';
+
+import { ThemeContext } from '../../theme';
+import createStyles from './styles';
 
 interface OwnProps {
   children?: React.ReactNode;
@@ -11,6 +13,8 @@ export type BoxProps = OwnProps & ViewProps;
 
 const Box: FC<BoxProps> = (props: BoxProps) => {
   const { children, style = {}, textStyle = {}, ...rest } = props;
+  const theme = useContext(ThemeContext);
+  const styles = createStyles(theme);
 
   return (
     <View style={[styles.view, style]} {...rest}>

@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import { colors as baseColors } from '../variables/base';
+import { colors as baseColors } from '../theme/variables/base';
 
 export const findColorInvert = (color: string) => {
   if (chroma(color).luminance() > 0.55) {
