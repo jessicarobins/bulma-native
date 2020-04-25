@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { box } from '../../variables/box';
+import box from '../../variables/box';
 
 const styles = StyleSheet.create({
   view: {
