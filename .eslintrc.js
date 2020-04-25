@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['@react-native-community', 'plugin:react/recommended', 'airbnb'],
+  extends: [
+    '@react-native-community',
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:prettier/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -19,7 +24,23 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'import/extensions': 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+    'react/jsx-props-no-spreading': 0,
   },
+  overrides: [
+    {
+      files: ['*.ts'],
+      rules: {
+        'import/prefer-default-export': 0,
+      },
+    },
+    {
+      files: ['*.story.tsx'],
+      rules: {
+        'import/no-extraneous-dependencies': 0,
+      },
+    },
+  ],
   settings: {
     'import/resolver': {
       node: {

@@ -7,7 +7,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "storybook": "start-storybook -p 7007",
-    "lint": "eslint src/**/*.*",
+    "lint": "eslint . --ext .ts,.tsx",
     "prettier": "prettier --check \"{shared,src}/**/*.{ts,tsx}\"",
     "prettier:fix": "prettier --write \"**/*.{ts,tsx}\""
   },
@@ -43,6 +43,7 @@
     "babel-preset-expo": "~8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.3",
