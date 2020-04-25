@@ -43,7 +43,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     size,
     variant,
   });
-  const containerStyles = [buttonStyles.container];
+  const containerStyles = [buttonStyles.container, style];
   const activityIndicatorColor =
     loaderColor || buttonStyles.activityIndicator.color;
   const textStyles = [buttonStyles.text, textStyle];

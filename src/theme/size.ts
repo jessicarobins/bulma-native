@@ -1,6 +1,9 @@
 import { typography } from '../variables/derived';
 
-export const getTextSize = (size: Size) => {
+export const getTextSize = (
+  size: Size,
+  fallback: number = typography.sizeNormal,
+) => {
   switch (size) {
     case 'small':
       return typography.sizeSmall;
@@ -9,6 +12,6 @@ export const getTextSize = (size: Size) => {
     case 'large':
       return typography.sizeLarge;
     default:
-      return typography.sizeNormal;
+      return fallback;
   }
 };
