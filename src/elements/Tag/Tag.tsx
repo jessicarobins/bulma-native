@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import {
   ViewProps,
   View,
@@ -8,6 +8,7 @@ import {
   TextProps,
 } from 'react-native';
 import createStyles from './styles';
+import { ThemeContext } from '../../theme';
 
 type Props = {
   children: React.ReactNode;
@@ -29,7 +30,8 @@ const Tag: FC<Props> = (props: Props) => {
     textStyles,
     ...rest
   } = props;
-  const styles = createStyles(color, rounded, size);
+  const theme = useContext(ThemeContext);
+  const styles = createStyles({ color, rounded, size }, theme);
   const text = [styles.text, textStyles];
   const view = [styles.view, style];
 

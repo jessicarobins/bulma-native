@@ -4,7 +4,11 @@ import {
   typography as baseTypography,
   baseSize,
 } from './base';
-import { findColorInvert, findLightColor, findDarkColor } from '../utils/color';
+import {
+  findColorInvert,
+  findLightColor,
+  findDarkColor,
+} from '../../utils/color';
 
 export const colors = {
   primary: baseColors.turquoise,

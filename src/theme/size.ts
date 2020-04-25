@@ -1,4 +1,4 @@
-import { typography } from '../variables/derived';
+import { typography } from './variables/derived';
 
 export const getTextSize = (
   size: Size,

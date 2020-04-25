@@ -1,22 +1,23 @@
 import { StyleSheet } from 'react-native';
-import box from '../../variables/box';
+import { Theme } from '../../theme';
 
-const styles = StyleSheet.create({
-  view: {
-    backgroundColor: box.boxBackgroundColor,
-    borderRadius: box.boxRadius,
-    elevation: 1,
+const createStyles = (theme: Theme) =>
+  StyleSheet.create({
+    view: {
+      backgroundColor: theme.box.boxBackgroundColor,
+      borderRadius: theme.box.boxRadius,
+      elevation: 1,
 
-    padding: box.boxPadding,
+      padding: theme.box.boxPadding,
 
-    shadowColor: box.shadowColor,
-    shadowOffset: box.shadowOffset,
-    shadowOpacity: box.shadowOpacity,
-    shadowRadius: box.shadowRadius,
-  },
-  text: {
-    color: box.boxColor,
-  },
-});
+      shadowColor: theme.box.shadowColor,
+      shadowOffset: theme.box.shadowOffset,
+      shadowOpacity: theme.box.shadowOpacity,
+      shadowRadius: theme.box.shadowRadius,
+    },
+    text: {
+      color: theme.box.boxColor,
+    },
+  });
 
-export default styles;
+export default createStyles;

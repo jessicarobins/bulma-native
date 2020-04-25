@@ -23,7 +23,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'import/extensions': 0,
+    'import/extensions': [1, 'never'],
+    'react/destructuring-assignment': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'react/jsx-props-no-spreading': 0,
   },

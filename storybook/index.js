@@ -5,10 +5,15 @@ import {
   addDecorator,
 } from '@storybook/react-native';
 
+import ThemeProvider, { theme } from '../src/theme';
 import CenterView from './stories/CenterView';
 import './rn-addons';
 
-addDecorator((getStory) => <CenterView>{getStory()}</CenterView>);
+addDecorator((getStory) => (
+  <CenterView>
+    <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
+  </CenterView>
+));
 
 // import stories
 configure(() => {

@@ -2,26 +2,37 @@ import { StyleSheet } from 'react-native';
 
 import { getColor, getInvertColor } from '../../theme/color';
 import { getTextSize } from '../../theme/size';
-import { baseSize, misc } from '../../variables/base';
-import { typography } from '../../variables/derived';
-import tag from '../../variables/tag';
+import { Theme } from '../../theme';
 
-const createStyles = (color: Nullable<Color>, rounded: boolean, size: Size) => {
-  const colorHex = getColor(color);
-  const invertedColorHex = getInvertColor(color);
-  const fontSize = getTextSize(size, typography.sizeSmall);
+const createStyles = (
+  {
+    color,
+    rounded,
+    size,
+  }: {
+    color: Nullable<Color>;
+    rounded: boolean;
+    size: Size;
+  },
+  theme: Theme,
+) => {
+  const colorHex = getColor(color, theme);
+  const invertedColorHex = getInvertColor(color, theme);
+  const fontSize = getTextSize(size, theme.derived.typography.sizeSmall);
 
   return StyleSheet.create({
     view: {
       alignItems: 'center',
-      backgroundColor: colorHex || tag.tagBackgroundColor,
-      borderRadius: rounded ? misc.radiusRounded : tag.tagRadius,
+      backgroundColor: colorHex || theme.tag.tagBackgroundColor,
+      borderRadius: rounded
+        ? theme.base.misc.radiusRounded
+        : theme.tag.tagRadius,
       justifyContent: 'center',
-      paddingHorizontal: 0.75 * baseSize,
-      paddingVertical: 0.25 * baseSize,
+      paddingHorizontal: 0.75 * theme.base.baseSize,
+      paddingVertical: 0.25 * theme.base.baseSize,
     },
     text: {
-      color: invertedColorHex || tag.tagColor,
+      color: invertedColorHex || theme.tag.tagColor,
       fontSize,
       lineHeight: 1.5 * fontSize,
     },
