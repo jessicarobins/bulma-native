@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import {
+  ActivityIndicator,
   StyleProp,
   TouchableOpacity,
   Text,
@@ -11,27 +12,47 @@ import getButtonStyle from './styles';
 export type ButtonProps = {
   children?: React.ReactNode;
   color?: Color;
+  loaderColor?: string;
+  loading?: boolean;
+  rounded?: boolean;
   size?: Size;
-  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<ViewStyle>;
   variant?: ButtonVariant;
 } & TouchableOpacityProps;
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const {
+    disabled = false,
     children,
     color,
+    loaderColor,
+    loading = false,
+    rounded = false,
     size = 'normal',
     style,
+    textStyle = {},
     variant = 'solid',
     ...rest
   } = props;
-  const buttonStyles = getButtonStyle({ color, size, variant });
+  const buttonStyles = getButtonStyle({
+    color,
+    disabled,
+    rounded,
+    size,
+    variant,
+  });
   const containerStyles = [buttonStyles.container];
-  const textStyles = [buttonStyles.text];
+  const activityIndicatorColor =
+    loaderColor || buttonStyles.activityIndicator.color;
+  const textStyles = [buttonStyles.text, textStyle];
 
   return (
-    <TouchableOpacity style={containerStyles} {...rest}>
-      <Text style={textStyles}>{children}</Text>
+    <TouchableOpacity disabled={disabled} style={containerStyles} {...rest}>
+      {loading ? (
+        <ActivityIndicator color={activityIndicatorColor} />
+      ) : (
+        <Text style={textStyles}>{children}</Text>
+      )}
     </TouchableOpacity>
   );
 };
