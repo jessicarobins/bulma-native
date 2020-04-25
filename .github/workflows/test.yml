@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: CI
 
 on:
   push:
@@ -15,12 +15,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.0.0
+          cmd: install
+      - name: Run Prettier
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: prettier
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Run eslint
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: lint
