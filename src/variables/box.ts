@@ -2,7 +2,7 @@ import chroma from 'chroma-js';
 import { baseSize, misc } from './base';
 import { textColors, generalColors } from './derived';
 
-export const box = {
+const box = {
   boxColor: textColors.text,
   boxBackgroundColor: generalColors.schemeMain,
   boxRadius: misc.radiusLarge,
@@ -13,3 +13,5 @@ export const box = {
   shadowOpacity: 0.125 * baseSize,
   shadowRadius: 0.25 * baseSize,
 };
+
+export default box;

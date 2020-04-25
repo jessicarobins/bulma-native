@@ -1,7 +1,7 @@
 import { baseSize } from './base';
 import { control, textColors, generalColors } from './derived';
 
-export const button = {
+const button = {
   buttonColor: textColors.textStrong,
   buttonBackgroundColor: generalColors.schemeMain,
   buttonFamily: false,
@@ -21,3 +21,5 @@ export const button = {
   buttonStaticBackgroundColor: generalColors.schemeMainTer,
   buttonStaticBorderColor: generalColors.border,
 };
+
+export default button;

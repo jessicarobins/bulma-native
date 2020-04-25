@@ -3,24 +3,16 @@ import { colors as derivedColors, invertColors } from '../variables/derived';
 
 export const getColor = (color: Nullable<Color>) => {
   if (!color) {
-    return;
+    return null;
   }
 
-  if (derivedColors[color]) {
-    return derivedColors[color];
-  }
-
-  if (baseColors[color]) {
-    return baseColors[color];
-  }
+  return derivedColors[color] || baseColors[color] || null;
 };
 
 export const getInvertColor = (color: Nullable<Color>) => {
   if (!color) {
-    return;
+    return null;
   }
 
-  if (invertColors[color]) {
-    return invertColors[color];
-  }
+  return invertColors[color] || null;
 };

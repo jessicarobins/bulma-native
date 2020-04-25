@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { getColor, getInvertColor } from '../../theme/color';
 import { getTextSize } from '../../theme/size';
 import { misc, baseSize } from '../../variables/base';
-import { button } from '../../variables/button';
+import button from '../../variables/button';
 import { control } from '../../variables/derived';
 
 const getColorStyles = (variant: ButtonVariant, color: Nullable<Color>) => {

@@ -16,7 +16,6 @@ export const findLightColor = (color: string) => {
     const newColor = chromaColor.set('hsl.l', lightness).hex();
     return newColor;
   } catch (err) {
-    console.log('are you throwing an error', err);
     return baseColors.whiteTer;
   }
 };
@@ -31,7 +30,6 @@ export const findDarkColor = (color: string) => {
     const newColor = chromaColor.set('hsl.l', Math.max(base, target)).hex();
     return newColor;
   } catch (err) {
-    console.log('error');
     return baseColors.greyDarker;
   }
 };
