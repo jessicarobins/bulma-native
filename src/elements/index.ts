@@ -4,6 +4,8 @@ export { default as Button } from './Button';
 export * from './Button';
 export { default as notification } from './Notification';
 export * from './Notification';
+export { default as Progress } from './Progress';
+export * from './Progress';
 export { default as Tag } from './Tag';
 export * from './Tag';
 export { default as Text } from './Text';

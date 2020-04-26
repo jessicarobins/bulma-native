@@ -332,6 +332,18 @@ const variables = {
     return this.baseSize;
   },
 
+  // Progress
+  get progressBarBackgroundColor() {
+    return this.borderLight;
+  },
+  get progressValueBackgroundColor() {
+    return this.textLight;
+  },
+  get progressBorderRadius() {
+    return this.radiusRounded;
+  },
+  progressIndeterminateDuration: 1.5,
+
   // Tag
   get tagBackgroundColor() {
     return this.background;
