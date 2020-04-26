@@ -1,11 +1,15 @@
 import { Theme } from './ThemeProvider';
 
-export const getColor = (color: Nullable<Color>, theme: Theme) => {
+export const getColor = (
+  color: Nullable<Color>,
+  theme: Theme,
+  fallback?: string,
+) => {
   if (!color) {
-    return null;
+    return fallback;
   }
 
-  return theme.colors[color] || theme.colors[color] || null;
+  return theme.colors[color] || theme.colors[color] || fallback;
 };
 
 export const getInvertColor = (color: Nullable<Color>, theme: Theme) => {

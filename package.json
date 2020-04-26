@@ -9,7 +9,9 @@
     "storybook": "start-storybook -p 7007",
     "lint": "eslint . --ext .ts,.tsx",
     "prettier": "prettier --check \"{shared,src}/**/*.{ts,tsx}\"",
-    "prettier:fix": "prettier --write \"**/*.{ts,tsx}\""
+    "prettier:fix": "prettier --write \"**/*.{ts,tsx}\"",
+    "ts:lint": "tsc --noEmit",
+    "ts:watch": "tsc -w"
   },
   "dependencies": {
     "chroma-js": "^2.1.0",
