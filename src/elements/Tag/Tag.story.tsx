@@ -9,7 +9,8 @@ import { SIZES, COLORS } from '../../constants';
 
 storiesOf('Tag', module)
   .addDecorator(withKnobs)
-  .add('Tag', () => (
+  .add('Basic', () => <Tag>Basic Tag</Tag>)
+  .add('Interactive', () => (
     <Tag
       color={select('color', COLORS, undefined)}
       rounded={boolean('rounded', false)}

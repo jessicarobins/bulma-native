@@ -12,7 +12,8 @@ const VARIANTS = ['solid', 'outline', 'inverted', 'invertedOutline'] as const;
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('Button', () => (
+  .add('Basic', () => <Button>Basic Button</Button>)
+  .add('Interactive', () => (
     <Button
       color={select('color', COLORS, undefined)}
       disabled={boolean('disabled', false)}

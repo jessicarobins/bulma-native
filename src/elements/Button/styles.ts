@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { getColor, getInvertColor } from '../../theme/color';
-import { getTextSize } from '../../theme/size';
+import { getTextSize } from '../../theme/text';
 import { Theme } from '../../theme/ThemeProvider';
 
 const getColorStyles = (

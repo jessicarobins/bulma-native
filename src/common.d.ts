@@ -1,5 +1,3 @@
-type ButtonVariant = 'solid' | 'outline' | 'inverted' | 'invertedOutline';
-
 type Color =
   | 'primary'
   | 'primaryLight'
