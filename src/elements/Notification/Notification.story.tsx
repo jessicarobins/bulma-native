@@ -9,7 +9,15 @@ import { COLORS } from '../../constants';
 
 storiesOf('Notification', module)
   .addDecorator(withKnobs)
-  .add('Notification', () => (
+  .add('Basic', () => (
+    <Notification isOpen>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.
+      Pellentesque risus mi, tempus quis placerat ut, porta nec nulla.
+      Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et
+      dictum felis venenatis efficitur. Sit amet, consectetur adipiscing elit
+    </Notification>
+  ))
+  .add('Interactive', () => (
     <Notification isOpen color={select('color', COLORS, undefined)}>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum

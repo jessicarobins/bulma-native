@@ -1,4 +1,5 @@
 import chroma from 'chroma-js';
+import { TextStyle } from 'react-native';
 import { findLightColor, findColorInvert, findDarkColor } from '../utils/color';
 
 const variables = {
@@ -181,11 +182,11 @@ const variables = {
   get baseFontSize() {
     return this.baseSize;
   },
-  weightLight: '300',
-  weightNormal: '400',
-  weightMedium: '500',
-  weightSemibold: '600',
-  weightBold: '700',
+  weightLight: '300' as TextStyle['fontWeight'],
+  weightNormal: '400' as TextStyle['fontWeight'],
+  weightMedium: '500' as TextStyle['fontWeight'],
+  weightSemibold: '600' as TextStyle['fontWeight'],
+  weightBold: '700' as TextStyle['fontWeight'],
   get size1() {
     return this.baseFontSize * 3;
   },
@@ -342,6 +343,19 @@ const variables = {
     return this.radius;
   },
   tagDeleteMargin: 1,
+
+  // Title
+  titleFamily: false,
+  get titleLineHeightMultiplier() {
+    return 1.125;
+  },
+  subtitleFamily: false,
+  get subtitleLineheightMultiplier() {
+    return 1.25;
+  },
+  get subtitleNegativeMargin() {
+    return -1.25 * this.baseSize;
+  },
 };
 
 export default variables;

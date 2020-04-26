@@ -21,6 +21,8 @@ configure(() => {
   require('../src/elements/Button/Button.story');
   require('../src/elements/Notification/Notification.story');
   require('../src/elements/Tag/Tag.story');
+  require('../src/elements/Text/Text.story');
+  require('../src/elements/Title/Title.story');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters

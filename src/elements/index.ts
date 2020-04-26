@@ -6,3 +6,5 @@ export { default as notification } from './Notification';
 export * from './Notification';
 export { default as Tag } from './Tag';
 export * from './Tag';
+export { default as Text } from './Text';
+export * from './Text';
