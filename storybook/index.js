@@ -19,6 +19,7 @@ addDecorator((getStory) => (
 configure(() => {
   require('../src/elements/Box/Box.story');
   require('../src/elements/Button/Button.story');
+  require('../src/elements/Notification/Notification.story');
   require('../src/elements/Tag/Tag.story');
 }, module);
 

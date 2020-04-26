@@ -1,3 +1,3 @@
 export { default } from './ThemeProvider';
 export * from './ThemeProvider';
-export * as theme from './variables';
+export { default as theme } from './variables';

@@ -5,7 +5,7 @@ export const getColor = (color: Nullable<Color>, theme: Theme) => {
     return null;
   }
 
-  return theme.derived.colors[color] || theme.base.colors[color] || null;
+  return theme.colors[color] || theme.colors[color] || null;
 };
 
 export const getInvertColor = (color: Nullable<Color>, theme: Theme) => {
@@ -13,5 +13,5 @@ export const getInvertColor = (color: Nullable<Color>, theme: Theme) => {
     return null;
   }
 
-  return theme.derived.invertColors[color] || null;
+  return theme.invertColors[color] || null;
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as theme from './variables';
+import theme from './variables';
 
 export type Theme = typeof theme;
 
