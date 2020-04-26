@@ -1,16 +1,17 @@
-import { typography } from './variables/derived';
+import { Theme } from './ThemeProvider';
 
 export const getTextSize = (
   size: Size,
-  fallback: number = typography.sizeNormal,
+  theme: Theme,
+  fallback: number = theme.sizeNormal,
 ) => {
   switch (size) {
     case 'small':
-      return typography.sizeSmall;
+      return theme.sizeSmall;
     case 'medium':
-      return typography.sizeMedium;
+      return theme.sizeMedium;
     case 'large':
-      return typography.sizeLarge;
+      return theme.sizeLarge;
     default:
       return fallback;
   }

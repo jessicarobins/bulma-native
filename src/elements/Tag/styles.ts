@@ -18,21 +18,19 @@ const createStyles = (
 ) => {
   const colorHex = getColor(color, theme);
   const invertedColorHex = getInvertColor(color, theme);
-  const fontSize = getTextSize(size, theme.derived.typography.sizeSmall);
+  const fontSize = getTextSize(size, theme, theme.sizeSmall);
 
   return StyleSheet.create({
     view: {
       alignItems: 'center',
-      backgroundColor: colorHex || theme.tag.tagBackgroundColor,
-      borderRadius: rounded
-        ? theme.base.misc.radiusRounded
-        : theme.tag.tagRadius,
+      backgroundColor: colorHex || theme.tagBackgroundColor,
+      borderRadius: rounded ? theme.radiusRounded : theme.tagRadius,
       justifyContent: 'center',
-      paddingHorizontal: 0.75 * theme.base.baseSize,
-      paddingVertical: 0.25 * theme.base.baseSize,
+      paddingHorizontal: 0.75 * theme.baseSize,
+      paddingVertical: 0.25 * theme.baseSize,
     },
     text: {
-      color: invertedColorHex || theme.tag.tagColor,
+      color: invertedColorHex || theme.tagColor,
       fontSize,
       lineHeight: 1.5 * fontSize,
     },

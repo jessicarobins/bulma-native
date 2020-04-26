@@ -4,19 +4,19 @@ import { Theme } from '../../theme';
 const createStyles = (theme: Theme) =>
   StyleSheet.create({
     view: {
-      backgroundColor: theme.box.boxBackgroundColor,
-      borderRadius: theme.box.boxRadius,
+      backgroundColor: theme.boxBackgroundColor,
+      borderRadius: theme.boxRadius,
       elevation: 1,
 
-      padding: theme.box.boxPadding,
+      padding: theme.boxPadding,
 
-      shadowColor: theme.box.shadowColor,
-      shadowOffset: theme.box.shadowOffset,
-      shadowOpacity: theme.box.shadowOpacity,
-      shadowRadius: theme.box.shadowRadius,
+      shadowColor: theme.boxShadowColor,
+      shadowOffset: theme.boxShadowOffset,
+      shadowOpacity: theme.boxShadowOpacity,
+      shadowRadius: theme.boxShadowRadius,
     },
     text: {
-      color: theme.box.boxColor,
+      color: theme.boxColor,
     },
   });
 
