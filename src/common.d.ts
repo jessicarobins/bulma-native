@@ -16,24 +16,28 @@ type AspectRatio =
   | 'is1by2'
   | 'is1by3';
 
-type Color =
-  | 'primary'
+type LightColor =
   | 'primaryLight'
-  | 'link'
   | 'linkLight'
-  | 'info'
   | 'infoLight'
-  | 'success'
   | 'successLight'
-  | 'warning'
   | 'warningLight'
+  | 'dangerLight';
+
+type BasicColor =
+  | 'primary'
+  | 'link'
+  | 'info'
+  | 'success'
+  | 'warning'
   | 'danger'
-  | 'dangerLight'
   | 'white'
   | 'light'
   | 'dark'
-  | 'black'
-  | 'text';
+  | 'black';
+
+type Color = LightColor | BasicColor;
+
 type Nullable<T> = T | undefined | null;
 type Size = 'small' | 'normal' | 'medium' | 'large';
 type StyleMap = { [key: string]: string };

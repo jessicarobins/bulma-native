@@ -43,7 +43,7 @@ const Tag: FC<Props> = (props: Props) => {
       <Text style={text} {...textProps}>
         {children}
       </Text>
-      {onDelete && <Delete style={styles.deleteContainer} />}
+      {onDelete && <Delete onPress={onDelete} style={styles.deleteContainer} />}
     </View>
   );
 };

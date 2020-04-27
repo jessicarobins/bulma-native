@@ -1,4 +1,9 @@
-import chroma from 'chroma-js';
+import chroma, { Color } from 'chroma-js';
+
+export const lighten = (color: Color, hslPercent: number) =>
+  color.set('hsl.l', color.get('hsl.l') + hslPercent);
+export const darken = (color: Color, hslPercent: number) =>
+  lighten(color, -hslPercent);
 
 export const findColorInvert = (color: string) => {
   if (chroma(color).luminance() > 0.55) {
