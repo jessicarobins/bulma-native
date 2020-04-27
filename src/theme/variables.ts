@@ -314,7 +314,7 @@ const variables = {
   get buttonStaticBorderColor() {
     return this.border;
   },
-  
+
   // Icon
   get iconDimensions() {
     return 1.5 * this.baseSize;
