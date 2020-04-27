@@ -315,8 +315,19 @@ const variables = {
     return this.border;
   },
 
-  // Image
-  dimensions: [16, 24, 32, 48, 64, 96, 128],
+  // Icon
+  get iconDimensions() {
+    return 1.5 * this.baseSize;
+  },
+  get iconDimensionsSmall() {
+    return this.baseSize;
+  },
+  get iconDimensionsMedium() {
+    return 2 * this.baseSize;
+  },
+  get iconDimensionsLarge() {
+    return 3 * this.baseSize;
+  },
 
   // Notification
   get notificationBackgroundColor() {

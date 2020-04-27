@@ -9,10 +9,12 @@ import {
 } from 'react-native';
 import createStyles from './styles';
 import { ThemeContext } from '../../theme';
+import Delete from '../Delete';
 
 type Props = {
   children: React.ReactNode;
   color?: Color;
+  onDelete?: (event: React.BaseSyntheticEvent) => void;
   rounded?: boolean;
   size?: Size;
   textProps?: TextProps;
@@ -23,6 +25,7 @@ const Tag: FC<Props> = (props: Props) => {
   const {
     children,
     color,
+    onDelete,
     rounded = false,
     size = 'normal',
     style,
@@ -40,6 +43,7 @@ const Tag: FC<Props> = (props: Props) => {
       <Text style={text} {...textProps}>
         {children}
       </Text>
+      {onDelete && <Delete style={styles.deleteContainer} />}
     </View>
   );
 };

@@ -9,9 +9,10 @@ const getColorStyles = (
   color: Nullable<Color>,
   userTheme: Theme,
 ): { backgroundColor: string; borderColor: string; textColor: string } => {
-  const colorHex = getColor(color, userTheme) || userTheme.buttonColor;
+  const colorHex =
+    getColor(color, userTheme) || userTheme.buttonBackgroundColor;
   const invertedColorHex =
-    getInvertColor(color, userTheme) || userTheme.buttonBackgroundColor;
+    getInvertColor(color, userTheme) || userTheme.buttonColor;
 
   switch (variant) {
     case 'outline':
@@ -32,17 +33,17 @@ const getColorStyles = (
         borderColor: invertedColorHex,
         textColor: invertedColorHex,
       };
-    default:
     case 'solid':
+    default:
       return {
         backgroundColor: colorHex,
-        borderColor: 'transparent',
+        borderColor: color ? 'transparent' : userTheme.buttonBorderColor,
         textColor: invertedColorHex,
       };
   }
 };
 
-const radiusStyles = (size: Size, rounded: boolean, userTheme: Theme) => {
+const getRadiusStyles = (size: Size, rounded: boolean, userTheme: Theme) => {
   let paddingHorizontal = userTheme.buttonPaddingHorizontal;
   let borderRadius = userTheme.controlRadius;
 
@@ -60,12 +61,18 @@ const getButtonStyle = (
   {
     color,
     disabled,
+    hasChildren,
+    hasIcon,
+    iconPosition,
     rounded,
     size,
     variant,
   }: {
     color: Nullable<Color>;
     disabled: boolean;
+    hasChildren: boolean;
+    hasIcon: boolean;
+    iconPosition: ButtonIconPosition;
     rounded: boolean;
     size: Size;
     variant: ButtonVariant;
@@ -77,30 +84,49 @@ const getButtonStyle = (
     color,
     userTheme,
   );
-  const { borderRadius, paddingHorizontal } = radiusStyles(
+  const { borderRadius, paddingHorizontal } = getRadiusStyles(
     size,
     rounded,
     userTheme,
   );
+
+  const fontSize = getTextSize(size, userTheme);
 
   return StyleSheet.create({
     activityIndicator: {
       color: textColor,
     },
     container: {
+      alignItems: 'center',
       backgroundColor,
       borderColor,
       borderWidth: userTheme.buttonBorderWidth,
       borderRadius,
+      display: 'flex',
+      flexDirection: 'row',
       justifyContent: 'center',
       opacity: disabled ? userTheme.buttonDisabledOpacity : 1,
       paddingVertical: userTheme.buttonPaddingVertical,
       paddingHorizontal,
     },
+    icon: {
+      color: textColor,
+      marginHorizontal: hasChildren
+        ? 0
+        : -0.3 * userTheme.buttonPaddingHorizontal,
+    },
     text: {
       color: textColor,
       textAlign: 'center',
-      fontSize: getTextSize(size, userTheme),
+      fontSize,
+      marginLeft:
+        hasIcon && iconPosition === 'left'
+          ? 0.5 * userTheme.buttonPaddingHorizontal
+          : 0,
+      marginRight:
+        hasIcon && iconPosition === 'right'
+          ? 0.5 * userTheme.buttonPaddingHorizontal
+          : 0,
     },
   });
 };

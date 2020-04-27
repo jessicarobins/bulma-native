@@ -1,3 +1,5 @@
-export { default } from './ThemeProvider';
+export { default as IconProvider } from './IconProvider';
+export * from './IconProvider';
+export { default as ThemeProvider } from './ThemeProvider';
 export * from './ThemeProvider';
 export { default as theme } from './variables';
