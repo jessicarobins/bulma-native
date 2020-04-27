@@ -5,7 +5,7 @@ import {
   addDecorator,
 } from '@storybook/react-native';
 
-import ThemeProvider, { theme } from '../src/theme';
+import { ThemeProvider, theme } from '../src/theme';
 import CenterView from './stories/CenterView';
 import './rn-addons';
 
@@ -19,6 +19,9 @@ addDecorator((getStory) => (
 configure(() => {
   require('../src/elements/Box/Box.story');
   require('../src/elements/Button/Button.story');
+  require('../src/elements/Delete/Delete.story');
+  require('../src/elements/Icon/Icon.story');
+  require('../src/elements/Image/Image.story');
   require('../src/elements/Notification/Notification.story');
   require('../src/elements/Progress/Progress.story');
   require('../src/elements/Tag/Tag.story');
