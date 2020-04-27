@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle } from 'react-native';
 import { ThemeContext, IconContext } from '../../theme';
 import createStyles from './styles';
 
@@ -8,13 +8,13 @@ export type IconProps = {
   name: string;
   size?: IconSize;
   solid?: boolean;
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<TextStyle>;
 };
 
 const Icon: FC<IconProps> = (props: IconProps) => {
   const IconPack = useContext(IconContext) as Nullable<React.ElementType>;
   const theme = useContext(ThemeContext);
-  const { color, size } = createStyles(
+  const styles = createStyles(
     { color: props.color, size: props.size || 'normal' },
     theme,
   );
@@ -22,11 +22,9 @@ const Icon: FC<IconProps> = (props: IconProps) => {
   if (IconPack) {
     return (
       <IconPack
-        color={color}
-        size={size}
         name={props.name}
         solid={props.solid}
-        style={[props.style]}
+        style={[styles.icon, props.style]}
       />
     );
   }

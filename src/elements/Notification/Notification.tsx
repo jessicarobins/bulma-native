@@ -9,12 +9,13 @@ import {
 } from 'react-native';
 import createStyles from './styles';
 import { ThemeContext } from '../../theme';
+import Delete from '../Delete';
 
 type Props = {
   children: React.ReactNode;
   color?: Color;
   isOpen: boolean;
-  // onClose: () => void;
+  onClose?: () => void;
   textProps?: TextProps;
   textStyles?: StyleProp<TextStyle>;
 } & ViewProps;
@@ -24,7 +25,7 @@ const Notification: FC<Props> = (props: Props) => {
     children,
     color,
     isOpen,
-    // onClose,
+    onClose,
     style,
     textProps,
     textStyles,
@@ -41,6 +42,7 @@ const Notification: FC<Props> = (props: Props) => {
 
   return (
     <View style={view} {...rest}>
+      {onClose && <Delete onPress={onClose} style={styles.delete} />}
       <Text style={text} {...textProps}>
         {children}
       </Text>

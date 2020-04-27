@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import getButtonStyle from './styles';
 import { ThemeContext } from '../../theme/ThemeProvider';
-import { IconContext } from '../../theme';
+import Icon from '../Icon';
 
 interface OwnProps {
   children?: React.ReactNode;
@@ -48,7 +48,6 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     ...rest
   } = props;
   const theme = useContext(ThemeContext);
-  const IconPack = useContext(IconContext) as Nullable<React.ElementType>;
 
   const buttonStyles = getButtonStyle(
     {
@@ -69,22 +68,9 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const iconStyles = [buttonStyles.icon, iconStyle];
   const textStyles = [buttonStyles.text, textStyle];
 
-  if (iconName && !IconPack) {
-    throw new Error(
-      'No icon pack specified. Use IconProvider at the root of your app to configure an icon pack.',
-    );
-  }
-
-  const ButtonIcon =
-    iconName && IconPack ? (
-      <IconPack
-        name={iconName}
-        color={buttonStyles.text.color}
-        size={buttonStyles.text.fontSize}
-        solid={iconSolid}
-        style={iconStyles}
-      />
-    ) : null;
+  const ButtonIcon = iconName ? (
+    <Icon name={iconName} size={size} solid={iconSolid} style={iconStyles} />
+  ) : null;
 
   return (
     <TouchableOpacity disabled={disabled} style={containerStyles} {...rest}>

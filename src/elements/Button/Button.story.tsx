@@ -1,22 +1,17 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
 import { SIZES, COLORS } from '../../constants';
-import { IconProvider } from '../../theme';
 import Button from './Button';
 
 const VARIANTS = ['solid', 'outline', 'inverted', 'invertedOutline'] as const;
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .addDecorator((getStory: any) => (
-    <IconProvider value={FontAwesome5}>{getStory()}</IconProvider>
-  ))
   .add('Basic Text Button', () => <Button>Basic Button</Button>)
   .add('Interactive Text Button', () => (
     <Button

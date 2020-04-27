@@ -4,14 +4,17 @@ import {
   configure,
   addDecorator,
 } from '@storybook/react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
-import { ThemeProvider, theme } from '../src/theme';
+import { ThemeProvider, theme, IconProvider } from '../src/theme';
 import CenterView from './stories/CenterView';
 import './rn-addons';
 
 addDecorator((getStory) => (
   <CenterView>
-    <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
+    <IconProvider value={FontAwesome5}>
+      <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
+    </IconProvider>
   </CenterView>
 ));
 

@@ -90,6 +90,8 @@ const getButtonStyle = (
     userTheme,
   );
 
+  const fontSize = getTextSize(size, userTheme);
+
   return StyleSheet.create({
     activityIndicator: {
       color: textColor,
@@ -108,21 +110,22 @@ const getButtonStyle = (
       paddingHorizontal,
     },
     icon: {
+      color: textColor,
       marginHorizontal: hasChildren
         ? 0
-        : -0.25 * userTheme.buttonPaddingHorizontal,
+        : -0.3 * userTheme.buttonPaddingHorizontal,
     },
     text: {
       color: textColor,
       textAlign: 'center',
-      fontSize: getTextSize(size, userTheme),
+      fontSize,
       marginLeft:
         hasIcon && iconPosition === 'left'
-          ? userTheme.buttonPaddingHorizontal
+          ? 0.5 * userTheme.buttonPaddingHorizontal
           : 0,
       marginRight:
         hasIcon && iconPosition === 'right'
-          ? userTheme.buttonPaddingHorizontal
+          ? 0.5 * userTheme.buttonPaddingHorizontal
           : 0,
     },
   });

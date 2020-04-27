@@ -25,6 +25,8 @@ const createStyles = (
       alignItems: 'center',
       backgroundColor: colorHex || theme.tagBackgroundColor,
       borderRadius: rounded ? theme.radiusRounded : theme.tagRadius,
+      display: 'flex',
+      flexDirection: 'row',
       justifyContent: 'center',
       paddingHorizontal: 0.75 * theme.baseSize,
       paddingVertical: 0.25 * theme.baseSize,
@@ -33,6 +35,10 @@ const createStyles = (
       color: invertedColorHex || theme.tagColor,
       fontSize,
       lineHeight: 1.5 * fontSize,
+    },
+    deleteContainer: {
+      marginLeft: 0.25 * theme.baseSize,
+      marginRight: -0.375 * theme.baseSize,
     },
   });
 };

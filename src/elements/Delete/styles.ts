@@ -1,15 +1,32 @@
 import { StyleSheet } from 'react-native';
-import { Theme } from '../../theme';
-import { getIconSize } from '../../theme/size';
+import chroma from 'chroma-js';
 
-const createStyles = ({ size }: { size: IconSize }, theme: Theme) =>
-  StyleSheet.create({
+import { Theme } from '../../theme';
+
+const createStyles = ({ size }: { size: Size }, theme: Theme) => {
+  const iconContainerSize = size === 'large' ? 24 : 20;
+  const iconFontSize = size === 'large' ? 14 : 12;
+
+  return StyleSheet.create({
     button: {
-      borderRadius: theme.radiusRounded,
+      backgroundColor: chroma(theme.schemeInvert).alpha(0.2).hex(),
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 1000,
+      height: iconContainerSize,
+      width: iconContainerSize,
+      overflow: 'hidden',
     },
     icon: {
-      fontSize: getIconSize(size, theme),
+      color: 'white',
+      fontSize: iconFontSize,
+      height: iconFontSize,
+      width: iconFontSize,
+      marginLeft: 4,
     },
   });
+};
 
 export default createStyles;
