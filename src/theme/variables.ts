@@ -315,6 +315,9 @@ const variables = {
     return this.border;
   },
 
+  // Image
+  dimensions: [16, 24, 32, 48, 64, 96, 128],
+
   // Notification
   get notificationBackgroundColor() {
     return this.background;
