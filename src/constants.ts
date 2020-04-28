@@ -17,24 +17,27 @@ export const ASPECT_RATIOS = [
   'is1by3',
 ] as const;
 
-export const COLORS = [
+export const BASIC_COLORS = [
   'primary',
-  'primaryLight',
   'link',
-  'linkLight',
   'info',
-  'infoLight',
   'success',
-  'successLight',
   'warning',
-  'warningLight',
   'danger',
-  'dangerLight',
   'white',
   'light',
   'dark',
   'black',
-  'text',
+] as const;
+
+export const COLORS = [
+  ...BASIC_COLORS,
+  'primaryLight',
+  'linkLight',
+  'infoLight',
+  'successLight',
+  'warningLight',
+  'dangerLight',
 ] as const;
 export const SIZES = ['small', 'normal', 'medium', 'large'] as const;
 

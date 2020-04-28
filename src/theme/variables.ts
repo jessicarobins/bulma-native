@@ -100,24 +100,12 @@ const variables = {
       dark: findColorInvert(this.colors.dark),
       link: findColorInvert(this.colors.link),
 
-      get primaryLight() {
-        return findDarkColor(this.primary);
-      },
-      get infoLight() {
-        return findDarkColor(this.info);
-      },
-      get successLight() {
-        return findDarkColor(this.success);
-      },
-      get warningLight() {
-        return findDarkColor(this.warning);
-      },
-      get dangerLight() {
-        return findDarkColor(this.danger);
-      },
-      get linkLight() {
-        return findDarkColor(this.link);
-      },
+      primaryLight: findDarkColor(this.colors.primary),
+      infoLight: findDarkColor(this.colors.info),
+      successLight: findDarkColor(this.colors.success),
+      warningLight: findDarkColor(this.colors.warning),
+      dangerLight: findDarkColor(this.colors.danger),
+      linkLight: findDarkColor(this.colors.link),
     };
   },
 
@@ -382,6 +370,43 @@ const variables = {
   get subtitleNegativeMargin() {
     return -1.25 * this.baseSize;
   },
+
+  /* COMPONENTS */
+
+  // Message
+  get messageBackgroundColor() {
+    return this.background;
+  },
+  get messageRadius() {
+    return this.radius;
+  },
+  get messageHeaderBackgroundColor() {
+    return this.text;
+  },
+  get messageHeaderColor() {
+    return this.textInvert;
+  },
+  get messageHeaderWeight() {
+    return this.weightBold;
+  },
+  messageHeaderPaddingHorizontalMultiplier: 1,
+  messageHeaderPaddingVerticalMultiplier: 0.75,
+  get messageHeaderRadius() {
+    return this.radius;
+  },
+  get messageBodyBorderColor() {
+    return this.border;
+  },
+  messageBodyBorderLeftWidth: 4,
+  get messageBodyColor() {
+    return this.text;
+  },
+  messageBodyPaddingHorizontalMultiplier: 1.5,
+  messageBodyPaddingVerticalMultiplier: 1.24,
+  get messageBodyRadius() {
+    return this.radius;
+  },
+  messageHeaderBodyBorderWidth: 0,
 };
 
 export default variables;

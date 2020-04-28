@@ -30,6 +30,7 @@ configure(() => {
   require('../src/elements/Tag/Tag.story');
   require('../src/elements/Text/Text.story');
   require('../src/elements/Title/Title.story');
+  require('../src/components/Message/Message.story');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
