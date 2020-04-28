@@ -29,3 +29,6 @@ export const findDarkColor = (color: string) => {
   const newColor = chromaColor.set('hsl.l', Math.max(base, target)).hex();
   return newColor;
 };
+
+export const rgba = (color: string, alpha: number) =>
+  chroma(color).alpha(alpha).hex();

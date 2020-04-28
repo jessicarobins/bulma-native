@@ -1,6 +1,11 @@
 import chroma from 'chroma-js';
 import { TextStyle } from 'react-native';
-import { findLightColor, findColorInvert, findDarkColor } from '../utils/color';
+import {
+  findLightColor,
+  findColorInvert,
+  findDarkColor,
+  rgba,
+} from '../utils/color';
 
 const variables = {
   baseSize: 16,
@@ -224,16 +229,10 @@ const variables = {
     return this.radiusSmall;
   },
   controlBorderWidth: 1,
-  get controlHeight() {
-    return 2.5 * this.baseSize;
-  },
-  controlLineHeight: 1.5,
-  get controlPaddingVertical() {
-    return 0.5 * this.baseSize;
-  },
-  get controlPaddingHorizontal() {
-    return 0.75 * this.baseSize;
-  },
+  controlHeightMultiplier: 2.5,
+  controlLineHeightMultiplier: 1.5,
+  controlPaddingVerticalMultiplier: 0.5,
+  controlPaddingHorizontalMultiplier: 0.75,
 
   /** ELEMENTS */
   // Box
@@ -407,6 +406,61 @@ const variables = {
     return this.radius;
   },
   messageHeaderBodyBorderWidth: 0,
+
+  /* FORM */
+
+  // Input
+  get inputColor() {
+    return this.textStrong;
+  },
+  get inputBackgroundColor() {
+    return this.schemeMain;
+  },
+  get inputBorderColor() {
+    return this.border;
+  },
+  get inputHeightMultiplier() {
+    return this.controlHeightMultiplier;
+  },
+  get inputPlaceholderColor() {
+    return rgba(this.inputColor, 0.3);
+  },
+  get inputFocusColor() {
+    return this.textStrong;
+  },
+  get inputFocusBorderColor() {
+    return this.colors.link;
+  },
+  inputFocusBoxShadowOffset: { width: 0, height: 0 },
+  inputFocusBoxShadowOpacityMultiplier: 0.25,
+  inputFocusBoxShadowRadiusMultiplier: 0.25,
+  get inputFocusBoxShadowColor() {
+    return this.colors.link;
+  },
+  get inputDisabledColor() {
+    return this.textLight;
+  },
+  get inputDisabledBackgroundColor() {
+    return this.background;
+  },
+  get inputDisabledBorderColor() {
+    return this.background;
+  },
+  get inputDisabledPlaceholderColor() {
+    return rgba(this.inputDisabledColor, 0.3);
+  },
+  get inputArrow() {
+    return this.colors.link;
+  },
+  get inputIconColor() {
+    return this.border;
+  },
+  get inputIconActiveColor() {
+    return this.text;
+  },
+  get inputRadius() {
+    return this.radius;
+  },
 };
 
 export default variables;
