@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 import { Text, View, ViewProps, StyleProp, TextStyle } from 'react-native';
 
 import { ThemeContext } from '../../theme';
-import createStyles from './styles';
+import createStyles from './Box.styles';
 
 interface OwnProps {
   children?: React.ReactNode;
