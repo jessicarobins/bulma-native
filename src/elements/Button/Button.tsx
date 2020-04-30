@@ -14,9 +14,13 @@ import Icon from '../Icon';
 interface OwnProps {
   children?: React.ReactNode;
   color?: Color;
-  iconName?: string;
-  iconPosition?: ButtonIconPosition;
-  iconProps?: {
+  iconLeft?: string;
+  iconRight?: string;
+  iconLeftProps?: {
+    solid?: boolean;
+    style?: StyleProp<TextStyle>;
+  };
+  iconRightProps?: {
     solid?: boolean;
     style?: StyleProp<TextStyle>;
   };
@@ -36,9 +40,16 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     disabled = false,
     children,
     color,
-    iconName,
-    iconPosition = 'left',
-    iconProps: { solid: iconSolid = false, style: iconStyle = {} } = {},
+    iconLeft,
+    iconRight,
+    iconLeftProps: {
+      solid: iconSolidLeft = false,
+      style: iconStyleLeft = {},
+    } = {},
+    iconRightProps: {
+      solid: iconSolidRight = false,
+      style: iconStyleRight = {},
+    } = {},
     loaderColor,
     loading = false,
     rounded = false,
@@ -56,8 +67,8 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
       color,
       disabled,
       hasChildren: !!children,
-      hasIcon: !!iconName,
-      iconPosition,
+      hasIconLeft: !!iconLeft,
+      hasIconRight: !!iconRight,
       isStatic,
       rounded,
       size,
@@ -68,12 +79,29 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const containerStyles = [buttonStyles.container, style];
   const activityIndicatorColor =
     loaderColor || buttonStyles.activityIndicator.color;
-  const iconStyles = [buttonStyles.icon, iconStyle];
   const textStyles = [buttonStyles.text, textStyle];
 
-  const ButtonIcon = iconName ? (
-    <Icon name={iconName} size={size} solid={iconSolid} style={iconStyles} />
+  const ButtonIconLeft = iconLeft ? (
+    <Icon
+      name={iconLeft}
+      size={size}
+      solid={iconSolidLeft}
+      style={[buttonStyles.icon, iconStyleLeft]}
+    />
   ) : null;
+
+  const ButtonIconRight =
+    iconRight &&
+    (iconRight === 'loading' ? (
+      <ActivityIndicator color={activityIndicatorColor} />
+    ) : (
+      <Icon
+        name={iconRight}
+        size={size}
+        solid={iconSolidRight}
+        style={[buttonStyles.icon, iconStyleRight]}
+      />
+    ));
 
   return (
     <TouchableOpacity
@@ -85,9 +113,9 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
         <ActivityIndicator color={activityIndicatorColor} />
       ) : (
         <>
-          {ButtonIcon && iconPosition === 'left' ? ButtonIcon : null}
+          {ButtonIconLeft}
           {children && <Text style={textStyles}>{children}</Text>}
-          {ButtonIcon && iconPosition === 'right' ? ButtonIcon : null}
+          {ButtonIconRight}
         </>
       )}
     </TouchableOpacity>
