@@ -14,7 +14,6 @@ const createStyles = (
   return StyleSheet.create({
     container: {
       position: 'relative',
-      width: '100%',
     },
     icon: {
       color: theme.inputIconColor,
@@ -49,7 +48,6 @@ const createStyles = (
       fontSize,
       paddingHorizontal: theme.controlPaddingHorizontalMultiplier * fontSize,
       paddingVertical: theme.controlPaddingVerticalMultiplier * fontSize,
-      width: '100%',
     },
     inputDisabled: {
       backgroundColor: theme.inputDisabledBackgroundColor,
