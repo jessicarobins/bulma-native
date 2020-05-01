@@ -21,6 +21,7 @@ storiesOf('Button', module)
       onPress={action('clicked-text')}
       rounded={boolean('rounded', false)}
       size={select('size', SIZES, 'normal')}
+      static={boolean('static', false)}
       variant={select('variant', VARIANTS, 'solid')}
     >
       <Text>Default Button</Text>

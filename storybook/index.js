@@ -31,6 +31,7 @@ configure(() => {
   require('../src/elements/Text/Text.story');
   require('../src/elements/Title/Title.story');
   require('../src/components/Message/Message.story');
+  require('../src/form/Field/Field.story');
   require('../src/form/Input/Input.story');
 }, module);
 

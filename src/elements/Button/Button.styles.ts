@@ -3,12 +3,22 @@ import { StyleSheet } from 'react-native';
 import { getColor, getInvertColor } from '../../theme/color';
 import { getTextSize } from '../../theme/text';
 import { Theme } from '../../theme/ThemeProvider';
+import { theme } from '../../theme';
 
 const getColorStyles = (
   variant: ButtonVariant,
   color: Nullable<Color>,
+  isStatic: boolean,
   userTheme: Theme,
 ): { backgroundColor: string; borderColor: string; textColor: string } => {
+  if (isStatic) {
+    return {
+      backgroundColor: theme.buttonStaticBackgroundColor,
+      borderColor: theme.buttonStaticBorderColor,
+      textColor: theme.buttonStaticColor,
+    };
+  }
+
   const colorHex =
     getColor(color, userTheme) || userTheme.buttonBackgroundColor;
   const invertedColorHex =
@@ -64,6 +74,7 @@ const getButtonStyle = (
     hasChildren,
     hasIcon,
     iconPosition,
+    isStatic,
     rounded,
     size,
     variant,
@@ -73,6 +84,7 @@ const getButtonStyle = (
     hasChildren: boolean;
     hasIcon: boolean;
     iconPosition: ButtonIconPosition;
+    isStatic: boolean;
     rounded: boolean;
     size: Size;
     variant: ButtonVariant;
@@ -82,6 +94,7 @@ const getButtonStyle = (
   const { textColor, backgroundColor, borderColor } = getColorStyles(
     variant,
     color,
+    isStatic,
     userTheme,
   );
   const { borderRadius, paddingHorizontal } = getRadiusStyles(

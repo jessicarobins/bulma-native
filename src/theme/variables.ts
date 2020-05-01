@@ -409,6 +409,19 @@ const variables = {
 
   /* FORM */
 
+  // Field
+  get labelColor() {
+    return this.textStrong;
+  },
+
+  get labelWeight() {
+    return this.weightBold;
+  },
+
+  get helpSize() {
+    return this.sizeSmall;
+  },
+
   // Input
   get inputColor() {
     return this.textStrong;

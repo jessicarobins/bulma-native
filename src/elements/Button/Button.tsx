@@ -7,7 +7,7 @@ import {
   TouchableOpacityProps,
   TextStyle,
 } from 'react-native';
-import getButtonStyle from './styles';
+import getButtonStyle from './Button.styles';
 import { ThemeContext } from '../../theme/ThemeProvider';
 import Icon from '../Icon';
 
@@ -24,6 +24,7 @@ interface OwnProps {
   loading?: boolean;
   rounded?: boolean;
   size?: Size;
+  static?: boolean;
   textStyle?: StyleProp<TextStyle>;
   variant?: ButtonVariant;
 }
@@ -42,6 +43,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
     loading = false,
     rounded = false,
     size = 'normal',
+    static: isStatic = false,
     style,
     textStyle = {},
     variant = 'solid',
@@ -56,6 +58,7 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
       hasChildren: !!children,
       hasIcon: !!iconName,
       iconPosition,
+      isStatic,
       rounded,
       size,
       variant,
@@ -73,7 +76,11 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
   ) : null;
 
   return (
-    <TouchableOpacity disabled={disabled} style={containerStyles} {...rest}>
+    <TouchableOpacity
+      disabled={disabled || isStatic}
+      style={containerStyles}
+      {...rest}
+    >
       {loading ? (
         <ActivityIndicator color={activityIndicatorColor} />
       ) : (
