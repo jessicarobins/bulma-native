@@ -63,6 +63,7 @@
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "^2.0.4",
     "react-docgen-typescript-loader": "^3.7.2",
+    "react-native-vector-icons": "^6.6.0",
     "react-syntax-highlighter": "^12.2.1",
     "storybook-addon-jsx": "^7.2.3",
     "typescript": "~3.8.3",
