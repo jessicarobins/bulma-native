@@ -8,6 +8,7 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import React from 'react';
 import Box from './Box';
+import { ThemeProvider, theme } from '../../theme';
 
 export default {
   title: 'Box',
@@ -43,4 +44,8 @@ export default {
 //   );
 // };
 
-export const simple = () => <Box>Basic Box</Box>;
+export const simple = () => (
+  <ThemeProvider value={theme}>
+    <Box>Basic Box</Box>
+  </ThemeProvider>
+);

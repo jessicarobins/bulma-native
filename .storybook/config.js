@@ -1,4 +1,3 @@
-import React from 'react';
 import { create } from '@storybook/theming';
 import { jsxDecorator } from 'storybook-addon-jsx';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -6,6 +5,13 @@ import { addDecorator, addParameters, configure } from '@storybook/react';
 import { ThemeProvider, theme } from '../src/theme';
 
 import centered from './decorator-centered';
+
+addDecorator(centered);
+addDecorator(withKnobs);
+addDecorator(jsxDecorator);
+addDecorator((getStory) => (
+  <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
+));
 
 // Option defaults:
 addParameters({
@@ -44,13 +50,6 @@ addParameters({
     panelPosition: 'bottom',
   },
 });
-
-addDecorator(centered);
-addDecorator(withKnobs);
-addDecorator(jsxDecorator);
-addDecorator((getStory) => (
-  <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
-));
 
 const context = require.context('../src', true, /\.stories\.(js|mdx|tsx)$/);
 

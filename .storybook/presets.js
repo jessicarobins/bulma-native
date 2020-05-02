@@ -1,10 +1,13 @@
+const path = require('path');
+
 module.exports = [
   {
-    name: '@storybook/addon-docs/preset',
+    name: '@storybook/preset-typescript',
     options: {
-      configureJSX: true,
-      babelOptions: {},
-      sourceLoaderOptions: null,
+      tsLoaderOptions: {
+        configFile: path.resolve(__dirname, '../tsconfig.json'),
+      },
+      include: [path.resolve(__dirname, '../src')],
     },
   },
 ];

@@ -364,7 +364,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.9.4.tgz#68a35e6b0319bbc014465be43828300113f2f2e8"
   integrity sha512-bC49otXX6N0/VYhgOMh4gnP26E9xnDZK3TmbNpxYzzz9BQLBosQwfyOe9/cXUU3txYhTzLCbcqd5c8y/OmCjHA==
 
-"@babel/parser@^7.1.6", "@babel/parser@^7.4.2", "@babel/parser@^7.4.3", "@babel/parser@^7.6.0", "@babel/parser@^7.9.6":
+"@babel/parser@^7.1.0", "@babel/parser@^7.1.6", "@babel/parser@^7.4.2", "@babel/parser@^7.4.3", "@babel/parser@^7.6.0", "@babel/parser@^7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.9.6.tgz#3b1bbb30dabe600cd72db58720998376ff653bc7"
   integrity sha512-AoeIEJn8vt+d/6+PXDRPaksYhnlbMIiejioBZvvMQsOjW/JYK6k/0dKnvvP3EhK5GfMBWDPtrxRtegWdAcdq9Q==
@@ -555,7 +555,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
-"@babel/plugin-syntax-nullish-coalescing-operator@^7.8.0":
+"@babel/plugin-syntax-nullish-coalescing-operator@^7.0.0", "@babel/plugin-syntax-nullish-coalescing-operator@^7.8.0":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-nullish-coalescing-operator/-/plugin-syntax-nullish-coalescing-operator-7.8.3.tgz#167ed70368886081f74b5c36c65a88c03b66d1a9"
   integrity sha512-aSff4zPII1u2QD7y+F8oDsz19ew4IGEJg9SVW+bqwpwtfFleiQDMdzA/R+UlWDzfnHFCxxleFT0PMIrR36XLNQ==
@@ -583,7 +583,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/plugin-syntax-optional-chaining@^7.8.0":
+"@babel/plugin-syntax-optional-chaining@^7.0.0", "@babel/plugin-syntax-optional-chaining@^7.8.0":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-chaining/-/plugin-syntax-optional-chaining-7.8.3.tgz#4f69c2ab95167e0180cd5336613f8c5788f7d48a"
   integrity sha512-KoK9ErH1MBlCPxV0VANkXW2/dw4vlbGDrFgz8bmUsBGYkFRcbRwMh6cIJubdPrkxRwuGdtCk0v/wPTKbQgBjkg==
@@ -856,7 +856,7 @@
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-syntax-jsx" "^7.8.3"
 
-"@babel/plugin-transform-react-jsx-self@^7.9.0":
+"@babel/plugin-transform-react-jsx-self@^7.0.0", "@babel/plugin-transform-react-jsx-self@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.9.0.tgz#f4f26a325820205239bb915bad8e06fcadabb49b"
   integrity sha512-K2ObbWPKT7KUTAoyjCsFilOkEgMvFG+y0FqOl6Lezd0/13kMkkjHskVsZvblRPj1PHA44PrToaZANrryppzTvQ==
@@ -952,7 +952,7 @@
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-syntax-typescript" "^7.8.3"
 
-"@babel/plugin-transform-typescript@^7.9.0":
+"@babel/plugin-transform-typescript@^7.3.2", "@babel/plugin-transform-typescript@^7.5.0", "@babel/plugin-transform-typescript@^7.9.0":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.9.6.tgz#2248971416a506fc78278fc0c0ea3179224af1e9"
   integrity sha512-8OvsRdvpt3Iesf2qsAn+YdlwAJD7zJ+vhFZmDCa4b8dTp7MmHtKk5FF2mCsGxjZwuwsy/yIIay/nLmxST1ctVQ==
@@ -1132,7 +1132,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.9.0"
     "@babel/plugin-transform-react-jsx-source" "^7.9.0"
 
-"@babel/preset-typescript@^7.1.0":
+"@babel/preset-typescript@^7.1.0", "@babel/preset-typescript@^7.3.3", "@babel/preset-typescript@^7.8.3":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.9.0.tgz#87705a72b1f0d59df21c179f7c3d2ef4b16ce192"
   integrity sha512-S4cueFnGrIbvYJgwsVFKdvOmpiL0XGw9MFW9D0vgRys5g36PBhZRL8NX8Gr2akz8XRtzq6HuDXPD/1nniagNUg==
@@ -1221,7 +1221,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@babel/types@^7.4.0", "@babel/types@^7.6.0", "@babel/types@^7.9.6":
+"@babel/types@^7.3.0", "@babel/types@^7.4.0", "@babel/types@^7.6.0", "@babel/types@^7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.9.6.tgz#2c5502b427251e9de1bd2dff95add646d95cc9f7"
   integrity sha512-qxXzvBO//jO9ZnoasKF1uJzHd2+M6Q2ZPIVfnFps8JJvXy0ZBbwbNOmE6SGIY5XOY6d1Bo5lb9d9RJ8nv3WSeA==
@@ -1505,7 +1505,7 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@mdx-js/loader@^1.5.1":
+"@mdx-js/loader@^1.5.1", "@mdx-js/loader@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.6.1.tgz#2f5fee718574eb24cfba7f51f42948fb0f201f1a"
   integrity sha512-v1+q2NEjHQYiMAQVdCw9TA41I9XRJkJYAm8vPKyDIqAqqlq3QAvsAHyHKMpjXldzREfAMW1yckFqIl2ym10AEw==
@@ -1713,7 +1713,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@storybook/addon-actions@^5.3.18":
+"@storybook/addon-actions@^5.3.9":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.3.18.tgz#e3e3b1475cebc9bdd2d563822fba9ac662b2601a"
   integrity sha512-jdBVCcfyWin274Lkwg5cL+1fJ651NCuIWxuJVsmHQtIl2xTjf2MyoMoKQZNdt4xtE+W9w+rS4bYt04elrizThg==
@@ -1773,7 +1773,7 @@
     vue-docgen-api "^4.1.0"
     vue-docgen-loader "^1.3.0-beta.0"
 
-"@storybook/addon-knobs@^5.3.18":
+"@storybook/addon-knobs@^5.3.9":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.18.tgz#60365bb179699cd8dc91df8be947469266012847"
   integrity sha512-X0WxGKoso3j5mS4c4enM8BvCjbO6Wwfxc++swQTqtANpBZ8k+w0piiEF1fiJf+ssgEAWe5brgIqnQ9kiBGLqKA==
@@ -2067,7 +2067,7 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/node-logger@5.3.18":
+"@storybook/node-logger@5.3.18", "@storybook/node-logger@^5.3.17":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-5.3.18.tgz#ee278acb8b6f10d456a24c0ff6d59818a0c3ad94"
   integrity sha512-Go/hdtaPTtjgJP+GYk8VXcOmecrdG7cXm0yyTlatd6s8xXI0txHme1/0MOZmEPows1Ec7KAQ20+NnaCGUPZUUg==
@@ -2085,6 +2085,17 @@
   integrity sha512-f2dr6xU3Es7OD0o2W0hDlzgVP6tZvgUjHfEGc6mj7kC+1BtEOuSDnQwRDznaLnVFwYlLKFJ/gkDneZb/qoBiwA==
   dependencies:
     core-js "^3.0.1"
+
+"@storybook/preset-typescript@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/preset-typescript/-/preset-typescript-3.0.0.tgz#e157baf6f2c4982c3da3328f5e1a640b3d7db9e4"
+  integrity sha512-tEbFWg5h/8SPfSCNXPxyqY418704K14q5H/xb9t0ARMXK3kZPTkKqKvdTvYg3UEKBBYbc+GA57UWaL+9b+DbDg==
+  dependencies:
+    "@babel/preset-typescript" "^7.8.3"
+    "@storybook/node-logger" "^5.3.17"
+    "@types/babel__core" "^7.1.6"
+    babel-preset-typescript-vue "^1.0.3"
+    fork-ts-checker-webpack-plugin "^4.1.0"
 
 "@storybook/react-native@^5.3.18":
   version "5.3.18"
@@ -2337,6 +2348,39 @@
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@types/babel-types/-/babel-types-7.0.7.tgz#667eb1640e8039436028055737d2b9986ee336e3"
   integrity sha512-dBtBbrc+qTHy1WdfHYjBwRln4+LWqASWakLHsWHR2NWHIFkv4W3O070IGoGLEBrJBvct3r0L1BUPuvURi7kYUQ==
+
+"@types/babel__core@^7.1.6":
+  version "7.1.7"
+  resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.7.tgz#1dacad8840364a57c98d0dd4855c6dd3752c6b89"
+  integrity sha512-RL62NqSFPCDK2FM1pSDH0scHpJvsXtZNiYlMB73DgPBaG1E38ZYVL+ei5EkWRbr+KC4YNiAUNBnRj+bgwpgjMw==
+  dependencies:
+    "@babel/parser" "^7.1.0"
+    "@babel/types" "^7.0.0"
+    "@types/babel__generator" "*"
+    "@types/babel__template" "*"
+    "@types/babel__traverse" "*"
+
+"@types/babel__generator@*":
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/@types/babel__generator/-/babel__generator-7.6.1.tgz#4901767b397e8711aeb99df8d396d7ba7b7f0e04"
+  integrity sha512-bBKm+2VPJcMRVwNhxKu8W+5/zT7pwNEqeokFOmbvVSqGzFneNxYcEBro9Ac7/N9tlsaPYnZLK8J1LWKkMsLAew==
+  dependencies:
+    "@babel/types" "^7.0.0"
+
+"@types/babel__template@*":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@types/babel__template/-/babel__template-7.0.2.tgz#4ff63d6b52eddac1de7b975a5223ed32ecea9307"
+  integrity sha512-/K6zCpeW7Imzgab2bLkLEbz0+1JlFSrUMdw7KoIIu+IUdu51GWaBZpd3y1VXGVXzynvGa4DaIaxNZHiON3GXUg==
+  dependencies:
+    "@babel/parser" "^7.1.0"
+    "@babel/types" "^7.0.0"
+
+"@types/babel__traverse@*":
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.0.11.tgz#1ae3010e8bf8851d324878b42acec71986486d18"
+  integrity sha512-ddHK5icION5U6q11+tV2f9Mo6CZVuT8GJKld2q9LqHSZbvLbH34Kcu2yFGckZut453+eQU6btIA3RihmnRgI+Q==
+  dependencies:
+    "@babel/types" "^7.3.0"
 
 "@types/babylon@^6.16.2":
   version "6.16.5"
@@ -3804,6 +3848,16 @@ babel-preset-fbjs@^3.1.2, babel-preset-fbjs@^3.2.0:
     babel-plugin-transform-simplify-comparison-operators "^6.9.4"
     babel-plugin-transform-undefined-to-void "^6.9.4"
     lodash "^4.17.11"
+
+babel-preset-typescript-vue@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/babel-preset-typescript-vue/-/babel-preset-typescript-vue-1.0.3.tgz#f03e4ac3763b2b47288b1b7c2c63128737d3e1b6"
+  integrity sha512-hulpKFA7zcElZpQlpYtPj1GJWocV0+RJG5Hk8rdTBHPappythNluaQIth8iVZIYghsrk26dCINvC/lizF2B99g==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-transform-typescript" "^7.3.2"
+    "@babel/preset-typescript" "^7.3.3"
+    fast-xml-parser "^3.12.17"
 
 babel-runtime@^6.26.0:
   version "6.26.0"
@@ -6596,6 +6650,11 @@ fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
+fast-xml-parser@^3.12.17:
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.16.0.tgz#d905e7e6b28fc4648cabebcb074363867fb56ee2"
+  integrity sha512-U+bpScacfgnfNfIKlWHDu4u6rtOaCyxhblOLJ8sZPkhsjgGqdZmVPBhdOyvdMGCDt8CsAv+cssOP3NzQptNt2w==
+
 fastq@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.7.0.tgz#fcd79a08c5bd7ec5b55cd3f5c4720db551929801"
@@ -6887,6 +6946,19 @@ fork-ts-checker-webpack-plugin@1.5.0:
     babel-code-frame "^6.22.0"
     chalk "^2.4.1"
     chokidar "^2.0.4"
+    micromatch "^3.1.10"
+    minimatch "^3.0.4"
+    semver "^5.6.0"
+    tapable "^1.0.0"
+    worker-rpc "^0.1.0"
+
+fork-ts-checker-webpack-plugin@^4.1.0, fork-ts-checker-webpack-plugin@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-4.1.3.tgz#306f1566fc1c916816830b3de4e53da8d6d6a9e2"
+  integrity sha512-ErA8cFsPfAIOx2UFoRlMraGVB1Ye3bXQTdNW6lmeKQDuNnkORqJmA9bcReNxJj5kVHeKkKcNZv3f6PMyeugO+w==
+  dependencies:
+    babel-code-frame "^6.22.0"
+    chalk "^2.4.1"
     micromatch "^3.1.10"
     minimatch "^3.0.4"
     semver "^5.6.0"
@@ -9571,6 +9643,50 @@ metro-react-native-babel-preset@^0.56.0, metro-react-native-babel-preset@^0.56.4
     "@babel/plugin-transform-sticky-regex" "^7.0.0"
     "@babel/plugin-transform-template-literals" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.0.0"
+    "@babel/plugin-transform-unicode-regex" "^7.0.0"
+    "@babel/template" "^7.0.0"
+    react-refresh "^0.4.0"
+
+metro-react-native-babel-preset@^0.59.0:
+  version "0.59.0"
+  resolved "https://registry.yarnpkg.com/metro-react-native-babel-preset/-/metro-react-native-babel-preset-0.59.0.tgz#20e020bc6ac9849e1477de1333d303ed42aba225"
+  integrity sha512-BoO6ncPfceIDReIH8pQ5tQptcGo5yRWQXJGVXfANbiKLq4tfgdZB1C1e2rMUJ6iypmeJU9dzl+EhPmIFKtgREg==
+  dependencies:
+    "@babel/plugin-proposal-class-properties" "^7.0.0"
+    "@babel/plugin-proposal-export-default-from" "^7.0.0"
+    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.0.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
+    "@babel/plugin-proposal-optional-catch-binding" "^7.0.0"
+    "@babel/plugin-proposal-optional-chaining" "^7.0.0"
+    "@babel/plugin-syntax-dynamic-import" "^7.0.0"
+    "@babel/plugin-syntax-export-default-from" "^7.0.0"
+    "@babel/plugin-syntax-flow" "^7.2.0"
+    "@babel/plugin-syntax-nullish-coalescing-operator" "^7.0.0"
+    "@babel/plugin-syntax-optional-chaining" "^7.0.0"
+    "@babel/plugin-transform-arrow-functions" "^7.0.0"
+    "@babel/plugin-transform-block-scoping" "^7.0.0"
+    "@babel/plugin-transform-classes" "^7.0.0"
+    "@babel/plugin-transform-computed-properties" "^7.0.0"
+    "@babel/plugin-transform-destructuring" "^7.0.0"
+    "@babel/plugin-transform-exponentiation-operator" "^7.0.0"
+    "@babel/plugin-transform-flow-strip-types" "^7.0.0"
+    "@babel/plugin-transform-for-of" "^7.0.0"
+    "@babel/plugin-transform-function-name" "^7.0.0"
+    "@babel/plugin-transform-literals" "^7.0.0"
+    "@babel/plugin-transform-modules-commonjs" "^7.0.0"
+    "@babel/plugin-transform-object-assign" "^7.0.0"
+    "@babel/plugin-transform-parameters" "^7.0.0"
+    "@babel/plugin-transform-react-display-name" "^7.0.0"
+    "@babel/plugin-transform-react-jsx" "^7.0.0"
+    "@babel/plugin-transform-react-jsx-self" "^7.0.0"
+    "@babel/plugin-transform-react-jsx-source" "^7.0.0"
+    "@babel/plugin-transform-regenerator" "^7.0.0"
+    "@babel/plugin-transform-runtime" "^7.0.0"
+    "@babel/plugin-transform-shorthand-properties" "^7.0.0"
+    "@babel/plugin-transform-spread" "^7.0.0"
+    "@babel/plugin-transform-sticky-regex" "^7.0.0"
+    "@babel/plugin-transform-template-literals" "^7.0.0"
+    "@babel/plugin-transform-typescript" "^7.5.0"
     "@babel/plugin-transform-unicode-regex" "^7.0.0"
     "@babel/template" "^7.0.0"
     react-refresh "^0.4.0"

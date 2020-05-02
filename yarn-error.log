@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/jessicarobins/.nvm/versions/node/v10.19.0/bin/node /Users/jessicarobins/.nvm/versions/node/v10.19.0/bin/yarn add -D @types/storybook__addon-docs
+  /Users/jessicarobins/.nvm/versions/node/v10.19.0/bin/node /Users/jessicarobins/.nvm/versions/node/v10.19.0/bin/yarn add -D module:metro-react-native-babel-preset
 
 PATH: 
   /Users/jessicarobins/.nvm/versions/node/v10.19.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jessicarobins/.nvm/versions/node/v10.19.0/bin:/Users/jessicarobins/Library/Android/sdk/emulator:/Users/jessicarobins/Library/Android/sdk/tools:/Users/jessicarobins/Library/Android/sdk/tools/bin:/Users/jessicarobins/Library/Android/sdk/platform-tools:/Users/jessicarobins/Library/Android/sdk/emulator:/Users/jessicarobins/Library/Android/sdk/tools:/Users/jessicarobins/Library/Android/sdk/tools/bin:/Users/jessicarobins/Library/Android/sdk/platform-tools
@@ -14,17 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fstorybook__addon-docs: Not found
-      at Request.params.callback [as _callback] (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:66975:18)
-      at Request.self.callback (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:140727:22)
-      at Request.emit (events.js:198:13)
-      at Request.<anonymous> (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:141699:10)
-      at Request.emit (events.js:198:13)
-      at IncomingMessage.<anonymous> (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:141621:12)
-      at Object.onceWrapper (events.js:286:20)
-      at IncomingMessage.emit (events.js:203:15)
-      at endReadableNT (_stream_readable.js:1145:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  Error: module:metro-react-native-babel-preset: Invalid protocol: module:
+      at Request.module.exports.Request.init (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:140996:31)
+      at new Request (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:140669:8)
+      at request (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:137575:10)
+      at RequestManager.execute (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:67027:15)
+      at RequestManager.shiftQueue (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:67065:10)
+      at /Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:66734:13
+      at new Promise (<anonymous>)
+      at new F (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:5301:28)
+      at RequestManager.request (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:66732:19)
+      at NpmRegistry.<anonymous> (/Users/jessicarobins/.nvm/versions/node/v10.19.0/lib/node_modules/yarn/lib/cli.js:31704:42)
 
 npm manifest: 
   {
@@ -72,6 +72,7 @@ npm manifest:
       "@types/react-native": "~0.61.17",
       "@typescript-eslint/eslint-plugin": "^2.29.0",
       "@typescript-eslint/parser": "^2.29.0",
+      "awesome-typescript-loader": "^5.2.1",
       "babel-eslint": "^10.1.0",
       "babel-loader": "^8.1.0",
       "babel-plugin-react-native-web": "^0.12.2",
@@ -87,7 +88,7 @@ npm manifest:
       "prettier": "^2.0.4",
       "react-docgen-typescript-loader": "^3.7.2",
       "react-syntax-highlighter": "^12.2.1",
-      "ts-loader": "^7.0.2",
+      "storybook-addon-jsx": "^7.2.3",
       "typescript": "~3.8.3",
       "url-loader": "^4.1.0",
       "webpack": "^4.43.0"
@@ -3492,6 +3493,20 @@ Lockfile:
       postcss "^7.0.27"
       postcss-value-parser "^4.0.3"
   
+  awesome-typescript-loader@^5.2.1:
+    version "5.2.1"
+    resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-5.2.1.tgz#a41daf7847515f4925cdbaa3075d61f289e913fc"
+    integrity sha512-slv66OAJB8orL+UUaTI3pKlLorwIvS4ARZzYR9iJJyGsEgOqueMfOMdKySWzZ73vIkEe3fcwFgsKMg4d8zyb1g==
+    dependencies:
+      chalk "^2.4.1"
+      enhanced-resolve "^4.0.0"
+      loader-utils "^1.1.0"
+      lodash "^4.17.5"
+      micromatch "^3.1.9"
+      mkdirp "^0.5.1"
+      source-map-support "^0.5.3"
+      webpack-log "^1.2.0"
+  
   aws-sign2@~0.7.0:
     version "0.7.0"
     resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -4496,7 +4511,7 @@ Lockfile:
       align-text "^0.1.3"
       lazy-cache "^1.0.3"
   
-  chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.2, chalk@^2.4.1, chalk@^2.4.2:
+  chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.2, chalk@^2.4.1, chalk@^2.4.2:
     version "2.4.2"
     resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
     integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -4911,6 +4926,14 @@ Lockfile:
       inherits "^2.0.3"
       readable-stream "^2.2.2"
       typedarray "^0.0.6"
+  
+  config-chain@^1.1.12:
+    version "1.1.12"
+    resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.12.tgz#0fde8d091200eb5e808caf25fe618c02f48e4efa"
+    integrity sha512-a1eOIcu8+7lUInge4Rpf/n4Krkf3Dd9lqhljRzII1/Zno/kRtUWnznPO3jOKBmTEktkt3fkxisUcivoj0ebzoA==
+    dependencies:
+      ini "^1.3.4"
+      proto-list "~1.2.1"
   
   configstore@^3.0.0:
     version "3.1.2"
@@ -5752,6 +5775,16 @@ Lockfile:
     dependencies:
       jsbn "~0.1.0"
       safer-buffer "^2.1.0"
+  
+  editorconfig@^0.15.3:
+    version "0.15.3"
+    resolved "https://registry.yarnpkg.com/editorconfig/-/editorconfig-0.15.3.tgz#bef84c4e75fb8dcb0ce5cee8efd51c15999befc5"
+    integrity sha512-M9wIMFx96vq0R4F+gRpY3o2exzb8hEj/n9S8unZtHSvYjibBp/iMufSzvmOcV/laG0ZtuTVGtiJggPOSW2r93g==
+    dependencies:
+      commander "^2.19.0"
+      lru-cache "^4.1.5"
+      semver "^5.6.0"
+      sigmund "^1.0.1"
   
   ee-first@1.1.1:
     version "1.1.1"
@@ -8635,6 +8668,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.5.tgz#ea87324a4230bef20a9651178ecab978ee54a8cb"
     integrity sha512-T7yzBSu9PR+DqjYt+I0KVO1XTb1QhAfHnXV5Nd3xpbXM6Xg4e3vP60Q4qkNU8Fh6PHC2PivPUNN3rY7G2MxcDQ==
   
+  js-beautify@^1.8.8:
+    version "1.11.0"
+    resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.11.0.tgz#afb873dc47d58986360093dcb69951e8bcd5ded2"
+    integrity sha512-a26B+Cx7USQGSWnz9YxgJNMmML/QG2nqIaL7VVYPCXbqiKz8PN0waSNvroMtvAK6tY7g/wPdNWGEP+JTNIBr6A==
+    dependencies:
+      config-chain "^1.1.12"
+      editorconfig "^0.15.3"
+      glob "^7.1.3"
+      mkdirp "~1.0.3"
+      nopt "^4.0.3"
+  
   js-string-escape@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/js-string-escape/-/js-string-escape-1.0.1.tgz#e2625badbc0d67c7533e9edc1068c587ae4137ef"
@@ -9108,7 +9152,7 @@ Lockfile:
       emojis-list "^3.0.0"
       json5 "^2.1.2"
   
-  loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
+  loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz#c579b5e34cb34b1a74edc6c1fb36bfa371d5a613"
     integrity sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
@@ -9748,7 +9792,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/microevent.ts/-/microevent.ts-0.1.1.tgz#70b09b83f43df5172d0205a63025bce0f7357fa0"
     integrity sha512-jo1OfR4TaEwd5HOrt5+tAZ9mqT4jmpNAusXtyfNzqVm9uiSYFZlKM1wYL4oU7azZW/PxQW53wM0S6OR1JHNa2g==
   
-  micromatch@^3.1.10, micromatch@^3.1.4:
+  micromatch@^3.1.10, micromatch@^3.1.4, micromatch@^3.1.9:
     version "3.1.10"
     resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
     integrity sha512-MWikgl9n9M3w+bpsY3He8L+w9eF9338xRl8IAO5viDizwSzziFEyUzo2xrrloB64ADbTf8uA8vRqqttDTOmccg==
@@ -9767,7 +9811,7 @@ Lockfile:
       snapdragon "^0.8.1"
       to-regex "^3.0.2"
   
-  micromatch@^4.0.0, micromatch@^4.0.2:
+  micromatch@^4.0.2:
     version "4.0.2"
     resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.2.tgz#4fcb0999bf9fbc2fcbdd212f6d629b9a56c39259"
     integrity sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==
@@ -9969,6 +10013,11 @@ Lockfile:
     integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
     dependencies:
       minimist "^1.2.5"
+  
+  mkdirp@~1.0.3:
+    version "1.0.4"
+    resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
+    integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
   
   morgan@^1.9.0:
     version "1.10.0"
@@ -10185,6 +10234,14 @@ Lockfile:
     integrity sha1-xkZdvwirzU2zWTF/eaxopkayj/k=
     dependencies:
       abbrev "1"
+  
+  nopt@^4.0.3:
+    version "4.0.3"
+    resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.3.tgz#a375cad9d02fd921278d954c2254d5aa57e15e48"
+    integrity sha512-CvaGwVMztSMJLOeXPrez7fyfObdZqNUK1cPAEzLHrTybIua9pMdmmPR5YwtfNftIOMv3DPUhFaxsZMNTQO20Kg==
+    dependencies:
+      abbrev "1"
+      osenv "^0.1.4"
   
   normalize-css-color@^1.0.2:
     version "1.0.2"
@@ -10591,7 +10648,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
     integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
   
-  osenv@0, osenv@^0.1.5:
+  osenv@0, osenv@^0.1.4, osenv@^0.1.5:
     version "0.1.5"
     resolved "https://registry.yarnpkg.com/osenv/-/osenv-0.1.5.tgz#85cdfafaeb28e8677f416e287592b5f3f49ea410"
     integrity sha512-0CWcCECdMVc2Rw3U5w9ZjqX6ga6ubk1xDVKxtBQPK7wis/0F2r9T6k4ydGYhecl7YUBxBVxhL5oisPsNxAPe2g==
@@ -11310,6 +11367,11 @@ Lockfile:
     dependencies:
       xtend "^4.0.0"
   
+  proto-list@~1.2.1:
+    version "1.2.4"
+    resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
+    integrity sha1-IS1b/hMYMGpCD2QCuOJv85ZHqEk=
+  
   protoduck@^5.0.1:
     version "5.0.1"
     resolved "https://registry.yarnpkg.com/protoduck/-/protoduck-5.0.1.tgz#03c3659ca18007b69a50fd82a7ebcc516261151f"
@@ -11707,7 +11769,7 @@ Lockfile:
       classnames "^2.2.5"
       prop-types "^15.6.0"
   
-  react-element-to-jsx-string@^14.1.0:
+  react-element-to-jsx-string@^14.1.0, react-element-to-jsx-string@^14.3.1:
     version "14.3.1"
     resolved "https://registry.yarnpkg.com/react-element-to-jsx-string/-/react-element-to-jsx-string-14.3.1.tgz#a08fa6e46eb76061aca7eabc2e70f433583cb203"
     integrity sha512-LRdQWRB+xcVPOL4PU4RYuTg6dUJ/FNmaQ8ls6w38YbzkbV6Yr5tFNESroub9GiSghtnMq8dQg2LcNN5aMIDzVg==
@@ -12838,6 +12900,11 @@ Lockfile:
       es-abstract "^1.17.0-next.1"
       object-inspect "^1.7.0"
   
+  sigmund@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
+    integrity sha1-P/IfGYytIXX587eBhT/ZTQ0ZtZA=
+  
   signal-exit@^3.0.0, signal-exit@^3.0.2:
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
@@ -12995,6 +13062,14 @@ Lockfile:
       buffer-from "^1.0.0"
       source-map "^0.6.0"
   
+  source-map-support@^0.5.3:
+    version "0.5.19"
+    resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
+    integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
+    dependencies:
+      buffer-from "^1.0.0"
+      source-map "^0.6.0"
+  
   source-map-url@^0.4.0:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
@@ -13122,6 +13197,21 @@ Lockfile:
     version "2.11.1"
     resolved "https://registry.yarnpkg.com/store2/-/store2-2.11.1.tgz#118645f1b5e38d20604852362183955e360a5893"
     integrity sha512-llZqXAXjG2E4FvWsZxFmBDfh6kqQuGFZm64TX23qW02Hf4dyElhDEbYx1IIVTEMKWrrDnDA9oqOjY8WHo2NgcA==
+  
+  storybook-addon-jsx@^7.2.3:
+    version "7.2.3"
+    resolved "https://registry.yarnpkg.com/storybook-addon-jsx/-/storybook-addon-jsx-7.2.3.tgz#754c54407d2f656568bb40cd6d2a85fb92cf1798"
+    integrity sha512-8KJNtejqsYHcdgCI7Mf+1UlBG7Ya4JyFiDMwmT5ZixhKNcbJh9yUdF+/yYp4rguhRuCxZ783gs1XiD0REVzDug==
+    dependencies:
+      copy-to-clipboard "^3.0.8"
+      js-beautify "^1.8.8"
+      react-element-to-jsx-string "^14.3.1"
+      storybook-pretty-props "^1.0.3"
+  
+  storybook-pretty-props@^1.0.3:
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/storybook-pretty-props/-/storybook-pretty-props-1.0.3.tgz#604974b998ffc680212bb7f3abc44fbfc9149119"
+    integrity sha512-iySc0X6K1QHqDV2JzU0DhWWARWhyJGI/11BYlHEymlFYfmewmxK4g/Z/ebj0YrwURAItwxMJUfsN2oDbiV0D8A==
   
   stream-browserify@^2.0.1:
     version "2.0.2"
@@ -13715,17 +13805,6 @@ Lockfile:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-1.1.1.tgz#68fad040d7dbd53a90f545b450702340e17d18f3"
     integrity sha512-UGTRZu1evMw4uTPyYF66/KFd22XiU+jMaIuHrkIHQ2GivAXVlLV0v/vHrpOuTRf9BmpNHi/SO7Vd0rLu0y57jg==
-  
-  ts-loader@^7.0.2:
-    version "7.0.2"
-    resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-7.0.2.tgz#465bc904aea4c331e9550e7c7d75dd17a0b7c24c"
-    integrity sha512-DwpZFB67RoILQHx42dMjSgv2STpacsQu5X+GD/H9ocd8IhU0m8p3b/ZrIln2KmcucC6xep2PdEMEblpWT71euA==
-    dependencies:
-      chalk "^2.3.0"
-      enhanced-resolve "^4.0.0"
-      loader-utils "^1.0.2"
-      micromatch "^4.0.0"
-      semver "^6.0.0"
   
   ts-map@^1.0.3:
     version "1.0.3"
@@ -14454,7 +14533,7 @@ Lockfile:
       querystring "^0.2.0"
       strip-ansi "^3.0.0"
   
-  webpack-log@^1.1.2:
+  webpack-log@^1.1.2, webpack-log@^1.2.0:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
     integrity sha512-U9AnICnu50HXtiqiDxuli5gLB5PGBo7VvcHx36jRZHwK4vzOYLbImqT4lwWwoMHdQWwEKw736fCHEekokTEKHA==
