@@ -38,7 +38,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.story.tsx'],
+      files: ['*.story.tsx', '*.stories.tsx'],
       rules: {
         'import/no-extraneous-dependencies': 0,
       },

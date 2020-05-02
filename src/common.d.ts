@@ -1,3 +1,5 @@
+declare module '@storybook/addon-docs/blocks';
+
 type AspectRatio =
   | 'isSquare'
   | 'is1by1'
