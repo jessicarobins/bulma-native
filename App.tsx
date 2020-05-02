@@ -1,2 +1,2 @@
 // @ts-ignore
-export { default } from './.storybook-expo';
+export { default } from './storybook-expo';
