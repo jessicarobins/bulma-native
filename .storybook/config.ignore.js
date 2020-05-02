@@ -28,8 +28,8 @@ addParameters({
     },
     theme: create({
       base: 'light',
-      brandTitle: 'React Native for Web',
-      brandUrl: 'https://necolas.github.io/react-native-web',
+      brandTitle: 'Bulma Native',
+      brandUrl: 'https://jessicarobins.github.io/bulma-native',
       // To control appearance:
       // brandImage: 'http://url.of/some.svg',
     }),
@@ -52,6 +52,8 @@ addParameters({
      */
     hierarchyRootSeparator: /\|/,
     panelPosition: 'bottom',
+    showPanel: true,
+    showRoots: true,
   },
 });
 
