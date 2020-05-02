@@ -33,6 +33,7 @@ configure(() => {
   require('../src/components/Message/Message.story');
   require('../src/form/Field/Field.story');
   require('../src/form/Input/Input.story');
+  require('../src/form/Select/Select.story');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters

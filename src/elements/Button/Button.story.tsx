@@ -27,12 +27,13 @@ storiesOf('Button', module)
       <Text>Default Button</Text>
     </Button>
   ))
-  .add('Basic with Icon', () => <Button iconName="beer">Basic Button</Button>)
+  .add('Basic with Icon', () => <Button iconLeft="beer">Basic Button</Button>)
   .add('Interactive Text & Icon Button', () => (
     <Button
       color={select('color', COLORS, undefined)}
       disabled={boolean('disabled', false)}
-      iconName={text('iconName', 'beer')}
+      iconLeft={text('iconLeft', 'beer')}
+      iconRight={text('iconRight', 'check')}
       loading={boolean('loading', false)}
       onPress={action('clicked-text')}
       rounded={boolean('rounded', false)}
@@ -42,12 +43,12 @@ storiesOf('Button', module)
       <Text>Default Button</Text>
     </Button>
   ))
-  .add('Basic Icon Button', () => <Button iconName="beer" />)
+  .add('Basic Icon Button', () => <Button iconLeft="beer" />)
   .add('Interactive Icon Button', () => (
     <Button
       color={select('color', COLORS, undefined)}
       disabled={boolean('disabled', false)}
-      iconName={text('iconName', 'beer')}
+      iconLeft={text('iconName', 'beer')}
       loading={boolean('loading', false)}
       onPress={action('clicked-text')}
       rounded={boolean('rounded', false)}

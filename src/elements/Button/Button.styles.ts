@@ -72,8 +72,8 @@ const getButtonStyle = (
     color,
     disabled,
     hasChildren,
-    hasIcon,
-    iconPosition,
+    hasIconLeft,
+    hasIconRight,
     isStatic,
     rounded,
     size,
@@ -82,8 +82,8 @@ const getButtonStyle = (
     color: Nullable<Color>;
     disabled: boolean;
     hasChildren: boolean;
-    hasIcon: boolean;
-    iconPosition: ButtonIconPosition;
+    hasIconLeft: boolean;
+    hasIconRight: boolean;
     isStatic: boolean;
     rounded: boolean;
     size: Size;
@@ -132,14 +132,8 @@ const getButtonStyle = (
       color: textColor,
       textAlign: 'center',
       fontSize,
-      marginLeft:
-        hasIcon && iconPosition === 'left'
-          ? 0.5 * userTheme.buttonPaddingHorizontal
-          : 0,
-      marginRight:
-        hasIcon && iconPosition === 'right'
-          ? 0.5 * userTheme.buttonPaddingHorizontal
-          : 0,
+      marginLeft: hasIconLeft ? 0.5 * userTheme.buttonPaddingHorizontal : 0,
+      marginRight: hasIconRight ? 0.5 * userTheme.buttonPaddingHorizontal : 0,
     },
   });
 };
