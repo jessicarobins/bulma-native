@@ -4,13 +4,34 @@ import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { jsxDecorator } from 'storybook-addon-jsx';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, addParameters } from '@storybook/react';
-import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome';
+import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import { IconProvider, ThemeProvider, theme } from '../src/theme';
+import decoratorCentered from './decorator-centered';
 
+// Generate required css
+import iconFont from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
+const iconFontStyles = `@font-face {
+  src: url(${iconFont});
+  font-family: FontAwesome;
+}`;
+
+// Create stylesheet
+const style = document.createElement('style');
+style.type = 'text/css';
+if (style.styleSheet) {
+  style.styleSheet.cssText = iconFontStyles;
+} else {
+  style.appendChild(document.createTextNode(iconFontStyles));
+}
+
+// Inject stylesheet
+document.head.appendChild(style);
+
+addDecorator(decoratorCentered);
 addDecorator(withKnobs);
 addDecorator(jsxDecorator);
 addDecorator((getStory) => (
-  <IconProvider value={FontAwesome5}>
+  <IconProvider value={FontAwesome}>
     <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
   </IconProvider>
 ));
