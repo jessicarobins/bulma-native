@@ -10,4 +10,12 @@ module.exports = [
       include: [path.resolve(__dirname, '../src')],
     },
   },
+  {
+    name: '@storybook/addon-docs/preset',
+    options: {
+      configureJSX: true,
+      babelOptions: {},
+      sourceLoaderOptions: null,
+    },
+  },
 ];

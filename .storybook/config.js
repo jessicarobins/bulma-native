@@ -1,3 +1,4 @@
+import React from 'react';
 import { create } from '@storybook/theming';
 import { jsxDecorator } from 'storybook-addon-jsx';
 import { withKnobs } from '@storybook/addon-knobs';
