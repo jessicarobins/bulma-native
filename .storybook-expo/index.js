@@ -20,20 +20,20 @@ addDecorator((getStory) => (
 
 // import stories
 configure(() => {
-  require('../src/elements/Box/Box.story');
-  require('../src/elements/Button/Button.story');
-  require('../src/elements/Delete/Delete.story');
-  require('../src/elements/Icon/Icon.story');
-  require('../src/elements/Image/Image.story');
-  require('../src/elements/Notification/Notification.story');
-  require('../src/elements/Progress/Progress.story');
-  require('../src/elements/Tag/Tag.story');
-  require('../src/elements/Text/Text.story');
-  require('../src/elements/Title/Title.story');
-  require('../src/components/Message/Message.story');
-  require('../src/form/Field/Field.story');
-  require('../src/form/Input/Input.story');
-  require('../src/form/Select/Select.story');
+  require('../src/elements/Box/Box.stories');
+  require('../src/elements/Button/Button.stories');
+  require('../src/elements/Delete/Delete.stories');
+  require('../src/elements/Icon/Icon.stories');
+  require('../src/elements/Image/Image.stories');
+  require('../src/elements/Notification/Notification.stories');
+  require('../src/elements/Progress/Progress.stories');
+  require('../src/elements/Tag/Tag.stories');
+  require('../src/elements/Text/Text.stories');
+  require('../src/elements/Title/Title.stories');
+  require('../src/components/Message/Message.stories');
+  require('../src/form/Field/Field.stories');
+  require('../src/form/Input/Input.stories');
+  require('../src/form/Select/Select.stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
