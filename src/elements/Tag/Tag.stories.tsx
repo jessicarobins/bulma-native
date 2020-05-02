@@ -8,7 +8,7 @@ import { action } from '@storybook/addon-actions';
 import { SIZES, COLORS } from '../../constants';
 import Tag from './Tag';
 
-storiesOf('Tag', module)
+storiesOf('Elements/Tag', module)
   .addDecorator(withKnobs)
   .add('Basic', () => <Tag>Basic Tag</Tag>)
   .add('Interactive', () => (

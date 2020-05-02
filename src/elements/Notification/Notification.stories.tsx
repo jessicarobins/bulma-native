@@ -2,39 +2,24 @@ import React from 'react';
 import { Text } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select, text } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
 
 import { action } from '@storybook/addon-actions';
-import Message from './Message';
-import { BASIC_COLORS, SIZES } from '../../constants';
+import Notification from './Notification';
+import { COLORS } from '../../constants';
 
-storiesOf('Message', module)
+storiesOf('Elements/Notification', module)
   .addDecorator(withKnobs)
   .add('Basic', () => (
-    <Message isOpen>
+    <Notification isOpen>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.
       Pellentesque risus mi, tempus quis placerat ut, porta nec nulla.
       Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et
       dictum felis venenatis efficitur. Sit amet, consectetur adipiscing elit
-    </Message>
-  ))
-  .add('Basic With Header', () => (
-    <Message header="Hello World" isOpen onClose={action('clicked-delete')}>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
-        dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla.
-        Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam,
-        et dictum felis venenatis efficitur. Sit amet, consectetur adipiscing
-        elit
-      </Text>
-    </Message>
+    </Notification>
   ))
   .add('Interactive', () => (
-    <Message
-      isOpen
-      color={select('color', BASIC_COLORS, undefined)}
-      size={select('size', SIZES, 'normal')}
-    >
+    <Notification isOpen color={select('color', COLORS, undefined)}>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
         dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla.
@@ -42,15 +27,13 @@ storiesOf('Message', module)
         et dictum felis venenatis efficitur. Sit amet, consectetur adipiscing
         elit
       </Text>
-    </Message>
+    </Notification>
   ))
-  .add('Interactive With Header', () => (
-    <Message
+  .add('Basic Delete', () => (
+    <Notification
       isOpen
-      color={select('color', BASIC_COLORS, undefined)}
-      header={text('header', 'Hello World')}
+      color={select('color', COLORS, undefined)}
       onClose={action('clicked-delete')}
-      size={select('size', SIZES, 'normal')}
     >
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
@@ -59,5 +42,5 @@ storiesOf('Message', module)
         et dictum felis venenatis efficitur. Sit amet, consectetur adipiscing
         elit
       </Text>
-    </Message>
+    </Notification>
   ));

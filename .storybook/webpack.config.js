@@ -28,6 +28,7 @@ module.exports = async ({ config, mode }) => {
 
   config.resolve.alias = {
     'react-native': 'react-native-web',
+    '@storybook/react-native': '@storybook/react',
     react: path.resolve('./node_modules/react'),
   };
 

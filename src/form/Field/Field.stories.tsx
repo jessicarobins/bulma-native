@@ -1,15 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 
 import { SIZES, COLORS } from '../../constants';
 import { Button } from '../../elements';
 import Input from '../Input';
 import Field from './Field';
 
-storiesOf('Field', module)
-  .addDecorator(withKnobs)
+storiesOf('Form/Field', module)
   .add('Basic', () => (
     <Field label="Email" help="Help text">
       <Input placeholder="Email Address" />

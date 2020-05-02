@@ -6,7 +6,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Icon from './Icon';
 import { COLORS } from '../../constants';
 
-storiesOf('Icon', module)
+storiesOf('Elements/Icon', module)
   .addDecorator(withKnobs)
   .add('Basic', () => <Icon name="beer" />)
   .add('Interactive', () => (

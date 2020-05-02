@@ -6,7 +6,7 @@ import { withKnobs, select, number } from '@storybook/addon-knobs';
 import { COLORS, SIZES } from '../../constants';
 import Progress from './Progress';
 
-storiesOf('Progress', module)
+storiesOf('Elements/Progress', module)
   .addDecorator(withKnobs)
   .add('Basic', () => <Progress value={10} />)
   .add('Animated', () => <Progress />)

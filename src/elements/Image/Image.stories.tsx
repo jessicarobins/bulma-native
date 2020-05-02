@@ -9,7 +9,7 @@ import { ASPECT_RATIOS } from '../../constants';
 
 const tony = Asset.fromModule(require('../../../assets/tony.jpg')).uri;
 
-storiesOf('Image', module)
+storiesOf('Elements/Image', module)
   .addDecorator(withKnobs)
   .add('Basic', () => <Image source={{ uri: tony }} />)
   .add('Interactive', () => (

@@ -5,7 +5,7 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Delete from './Delete';
 
-storiesOf('Delete', module)
+storiesOf('Elements/Delete', module)
   .addDecorator(withKnobs)
   .add('Basic', () => <Delete />)
   .add('Interactive', () => (

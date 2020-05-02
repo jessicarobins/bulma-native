@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 import Text from './Text';
 import {
@@ -12,8 +12,7 @@ import {
   TEXT_TRANSFORMS,
 } from '../../constants';
 
-storiesOf('Text', module)
-  .addDecorator(withKnobs)
+storiesOf('Elements/Text', module)
   .add('Basic', () => (
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.

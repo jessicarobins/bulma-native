@@ -1,13 +1,12 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 
 import { SIZES, COLORS } from '../../constants';
 import Input from './Input';
 
-storiesOf('Input', module)
-  .addDecorator(withKnobs)
+storiesOf('Form/Input', module)
   .add('Basic', () => <Input />)
   .add('Basic with Icon', () => <Input iconLeft="envelope" />)
   .add('Basic with two Icons', () => (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 import Title from './Title';
 import {
@@ -12,8 +12,7 @@ import {
   TEXT_WEIGHTS,
 } from '../../constants';
 
-storiesOf('Title', module)
-  .addDecorator(withKnobs)
+storiesOf('Elements/Title', module)
   .add('Basic', () => <Title title="Title" subtitle="Subtitle" />)
   .add('Interactive', () => (
     <Title
