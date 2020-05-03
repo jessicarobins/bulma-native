@@ -16,7 +16,13 @@ module.exports = {
       name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
-        babelOptions: {},
+        babelOptions: {
+          presets: ['module:metro-react-native-babel-preset'],
+          plugins: [
+            'react-native-web',
+            '@babel/plugin-proposal-export-namespace-from',
+          ],
+        },
       },
     },
 

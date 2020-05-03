@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { ViewStyle, StyleProp, TouchableOpacity } from 'react-native';
+import { ViewStyle, StyleProp, TouchableOpacity, View } from 'react-native';
 
 import { ThemeContext } from '../../theme';
 import { Button, Text } from '../../elements';
@@ -42,7 +42,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
   };
 
   return (
-    <>
+    <View>
       <Button
         iconLeft={iconName}
         iconLeftProps={{ style: styles.buttonIconLeft }}
@@ -56,7 +56,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
         {value?.name ?? placeholder}
       </Button>
       <Flyout
-        open={open}
+        isOpen={open}
         onBackdropPress={() => setOpen(false)}
         style={[styles.flyout, rounded && styles.flyoutRounded]}
       >
@@ -69,7 +69,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
           </TouchableOpacity>
         ))}
       </Flyout>
-    </>
+    </View>
   );
 };
 

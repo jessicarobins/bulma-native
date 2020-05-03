@@ -5,7 +5,8 @@ import { jsxDecorator } from 'storybook-addon-jsx';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, addParameters } from '@storybook/react';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
-import { IconProvider, ThemeProvider, theme } from '../src/theme';
+import ApplicationProvider from '../src/root/ApplicationProvider';
+import { theme } from '../src/theme';
 import decoratorCentered from './decorator-centered';
 
 // Generate required css
@@ -31,9 +32,9 @@ addDecorator(decoratorCentered);
 addDecorator(withKnobs);
 addDecorator(jsxDecorator);
 addDecorator((getStory) => (
-  <IconProvider value={FontAwesome}>
-    <ThemeProvider value={theme}>{getStory()}</ThemeProvider>
-  </IconProvider>
+  <ApplicationProvider iconPack={FontAwesome} theme={theme}>
+    {getStory()}
+  </ApplicationProvider>
 ));
 
 addParameters({
