@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { ViewProps, View, Text } from 'react-native';
-import createStyles from './styles';
+import createStyles from './Message.styles';
 import { ThemeContext } from '../../theme';
 import { Delete } from '../../elements';
 

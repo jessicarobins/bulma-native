@@ -5,11 +5,7 @@ import { getTextSize } from '../../theme/text';
 import { getLineHeight } from '../../utils/font';
 
 const createStyles = (
-  {
-    hasTitle,
-    subtitleSize,
-    titleSize,
-  }: { hasTitle: boolean; subtitleSize: TextSize; titleSize: TextSize },
+  { subtitleSize, titleSize }: { subtitleSize: TextSize; titleSize: TextSize },
   theme: Theme,
 ) => {
   const titleFontSize = getTextSize(titleSize, theme);
@@ -21,10 +17,16 @@ const createStyles = (
         subtitleFontSize,
         theme.subtitleLineheightMultiplier,
       ),
-      marginTop: hasTitle ? theme.subtitleNegativeMargin : 0,
+      marginTop: 0,
+    },
+    subtitleWithTitle: {
+      marginTop: theme.subtitleNegativeMarginMultiplier * titleFontSize,
     },
     title: {
       lineHeight: getLineHeight(titleFontSize, theme.titleLineHeightMultiplier),
+    },
+    titleWithSubtitle: {
+      marginBottom: 1.5 * titleFontSize,
     },
   });
 };

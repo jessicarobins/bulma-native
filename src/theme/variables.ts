@@ -359,16 +359,10 @@ const variables = {
 
   // Title
   titleFamily: false,
-  get titleLineHeightMultiplier() {
-    return 1.125;
-  },
+  titleLineHeightMultiplier: 1.125,
   subtitleFamily: false,
-  get subtitleLineheightMultiplier() {
-    return 1.25;
-  },
-  get subtitleNegativeMargin() {
-    return -1.25 * this.baseSize;
-  },
+  subtitleLineheightMultiplier: 1.25,
+  subtitleNegativeMarginMultiplier: -1.25,
 
   /* COMPONENTS */
 
