@@ -24,6 +24,7 @@ export type Props = {
   size?: Size;
 } & ViewProps;
 
+/** Based on the [Bulma Message Component](https://bulma.io/documentation/components/message/) */
 export const Message: FC<Props> = (props: Props) => {
   const {
     children,

@@ -20,6 +20,14 @@ module.exports = async ({ config, mode }) => {
       },
       {
         loader: require.resolve('react-docgen-typescript-loader'),
+        options: {
+          propFilter: (prop) => {
+            if (prop.parent && prop.parent.fileName.includes('node_modules')) {
+              return false;
+            }
+            return true;
+          },
+        },
       },
     ],
   });
