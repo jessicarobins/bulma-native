@@ -23,14 +23,11 @@ const Flyout: FC<Props> = (props: Props) => {
   }
 
   return (
-    <>
+    <TouchableWithoutFeedback onPress={props.onBackdropPress}>
       <View style={[styles.flyoutContainer]}>
         <View style={[styles.flyout, props.style]}>{props.children}</View>
       </View>
-      <TouchableWithoutFeedback onPress={props.onBackdropPress}>
-        <View style={styles.backdrop} />
-      </TouchableWithoutFeedback>
-    </>
+    </TouchableWithoutFeedback>
   );
 };
 

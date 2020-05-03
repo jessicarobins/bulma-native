@@ -56,7 +56,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
         {value?.name ?? placeholder}
       </Button>
       <Flyout
-        isOpen={open}
+        open={open}
         onBackdropPress={() => setOpen(false)}
         style={[styles.flyout, rounded && styles.flyoutRounded]}
       >
