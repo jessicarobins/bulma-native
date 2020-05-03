@@ -1,21 +1,27 @@
 import React from 'react';
-import { Asset } from 'expo-asset';
+import { StyleSheet } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 
-import Image from './Image';
 import { ASPECT_RATIOS } from '../../constants';
+import tony from '../../../assets/tony.jpg';
+import Image from './Image';
 
-const tony = Asset.fromModule(require('../../../assets/tony.jpg')).uri;
+const styles = StyleSheet.create({
+  image: {
+    minHeight: 200,
+  },
+});
 
 storiesOf('Elements/Image', module)
-  .addDecorator(withKnobs)
-  .add('Basic', () => <Image source={{ uri: tony }} />)
+  .add('Basic', () => <Image style={styles.image} source={tony} />)
+
   .add('Interactive', () => (
     <Image
       aspectRatio={select('aspectRatio', ASPECT_RATIOS, undefined)}
       rounded={boolean('rounded', false)}
-      source={{ uri: tony }}
+      source={tony}
+      style={styles.image}
     />
   ));

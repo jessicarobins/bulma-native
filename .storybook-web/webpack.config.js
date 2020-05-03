@@ -3,14 +3,6 @@ const webpack = require('webpack');
 
 module.exports = async ({ config, mode }) => {
   config.module.rules.push({
-    test: /\.(gif|jpe?g|png|svg)$/,
-    use: {
-      loader: 'url-loader',
-      options: { name: '[name].[ext]' },
-    },
-  });
-
-  config.module.rules.push({
     test: /\.ttf$/,
     loader: 'url-loader',
     include: path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
@@ -24,6 +16,7 @@ module.exports = async ({ config, mode }) => {
     '.jsx',
     '.ts',
     '.tsx',
+    '.jpg',
   ];
 
   config.resolve.alias = {
