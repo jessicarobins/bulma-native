@@ -15,6 +15,7 @@ const createStyles = (
       height: getSize(size, theme),
       overflow: 'hidden',
       padding: 0,
+      width: '100%',
     },
     progressValue: {
       backgroundColor: getColor(

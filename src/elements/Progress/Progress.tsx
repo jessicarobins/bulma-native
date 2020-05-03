@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 import { View, ViewProps, StyleProp, ViewStyle, Animated } from 'react-native';
 
 import { ThemeContext } from '../../theme';
-import createStyles from './styles';
+import createStyles from './Progress.styles';
 
 interface OwnProps {
   color?: Color;
