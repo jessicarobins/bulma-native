@@ -4,7 +4,7 @@ import {
   configure,
   addDecorator,
 } from '@storybook/react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import { ThemeProvider, theme, IconProvider } from '../src/theme';
 import CenterView from './stories/CenterView';
