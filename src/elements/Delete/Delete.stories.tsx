@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 import Delete from './Delete';
 
 storiesOf('Elements/Delete', module)
-  .addDecorator(withKnobs)
+  .addParameters({ component: Delete })
   .add('Basic', () => <Delete />)
   .add('Interactive', () => (
     <Delete

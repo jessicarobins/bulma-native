@@ -8,6 +8,22 @@ module.exports = async ({ config, mode }) => {
     include: path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
   });
 
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    use: [
+      {
+        loader: require.resolve('awesome-typescript-loader'),
+        options: {
+          configFile: path.resolve(__dirname, './tsconfig.json'),
+          transpileOnly: true,
+        },
+      },
+      {
+        loader: require.resolve('react-docgen-typescript-loader'),
+      },
+    ],
+  });
+
   config.resolve.extensions = [
     '.web.js',
     '.js',

@@ -4,16 +4,27 @@ import createStyles from './Message.styles';
 import { ThemeContext } from '../../theme';
 import { Delete } from '../../elements';
 
-type Props = {
+export type Props = {
+  /** Content to display inside the Message */
   children: React.ReactNode;
+
+  /** Corresponds to Bulma Color variables */
   color?: BasicColor;
+
+  /** Content to display inside message header */
   header?: React.ReactNode | string;
+
+  /** Whether to display the message (to be controlled by an external component, and toggled via the onClose prop) */
   isOpen: boolean;
+
+  /** Optional callback on tap of the Delete button  */
   onClose?: (event: React.BaseSyntheticEvent) => void;
+
+  /** Corresponds to Bulma Size variables */
   size?: Size;
 } & ViewProps;
 
-const Message: FC<Props> = (props: Props) => {
+export const Message: FC<Props> = (props: Props) => {
   const {
     children,
     color,

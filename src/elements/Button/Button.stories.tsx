@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 
 import { SIZES, COLORS } from '../../constants';
 import Button from './Button';
@@ -11,7 +11,7 @@ import Button from './Button';
 const VARIANTS = ['solid', 'outline', 'inverted', 'invertedOutline'] as const;
 
 storiesOf('Elements/Button', module)
-  .addDecorator(withKnobs)
+  .addParameters({ component: Button })
   .add('Basic Text Button', () => <Button>Basic Button</Button>)
   .add('Interactive Text Button', () => (
     <Button

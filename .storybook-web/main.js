@@ -26,6 +26,7 @@ module.exports = {
       },
     },
 
+    '@storybook/addon-docs/register',
     '@storybook/addon-knobs/preset',
     '@storybook/addon-actions/register',
     'storybook-addon-jsx/register',

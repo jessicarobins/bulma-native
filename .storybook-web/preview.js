@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from '@storybook/theming';
-import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import { jsxDecorator } from 'storybook-addon-jsx';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, addParameters } from '@storybook/react';
@@ -40,6 +40,7 @@ addDecorator((getStory) => (
 addParameters({
   docs: {
     container: DocsContainer,
+    page: DocsPage,
     extractComponentDescription: (_target, parameters) => {
       try {
         return parameters.component.__docgenInfo.description;

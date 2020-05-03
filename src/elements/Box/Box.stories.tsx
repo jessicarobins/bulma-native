@@ -5,8 +5,10 @@ import { storiesOf } from '@storybook/react-native';
 
 import Box from './Box';
 
-storiesOf('Box', module).add('Basic', () => (
-  <Box>
-    <Text>Default Box</Text>
-  </Box>
-));
+storiesOf('Elements/Box', module)
+  .addParameters({ component: Box })
+  .add('Basic', () => (
+    <Box>
+      <Text>Default Box</Text>
+    </Box>
+  ));

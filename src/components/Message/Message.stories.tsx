@@ -9,6 +9,7 @@ import Message from './Message';
 import { BASIC_COLORS, SIZES } from '../../constants';
 
 storiesOf('Components/Message', module)
+  .addParameters({ component: Message })
   .add('Basic', () => (
     <Message isOpen>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.
