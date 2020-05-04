@@ -27,6 +27,7 @@ module.exports = async ({ config, mode }) => {
             }
             return true;
           },
+          shouldExtractLiteralValuesFromEnum: true,
         },
       },
     ],

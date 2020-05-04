@@ -20,7 +20,10 @@ export type Props = {
   /** Optional callback on tap of the Delete button  */
   onClose?: (event: React.BaseSyntheticEvent) => void;
 
-  /** Corresponds to Bulma Size variables */
+  /**
+   * Corresponds to Bulma Size variables
+   * @default normal
+   * */
   size?: Size;
 } & ViewProps;
 
