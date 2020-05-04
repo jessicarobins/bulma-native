@@ -5,10 +5,13 @@ import {
   addDecorator,
 } from '@storybook/react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { withKnobs } from '@storybook/addon-ondevice-knobs';
 
 import { ThemeProvider, theme, IconProvider } from '../src/theme';
 import CenterView from './stories/CenterView';
 import './rn-addons';
+
+addDecorator(withKnobs);
 
 addDecorator((getStory) => (
   <CenterView>

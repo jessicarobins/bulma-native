@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
 
 storiesOf('Elements/Image', module)
   .add('Basic', () => <Image style={styles.image} source={tony} />)
-
   .add('Interactive', () => (
     <Image
       aspectRatio={select('aspectRatio', ASPECT_RATIOS, undefined)}
