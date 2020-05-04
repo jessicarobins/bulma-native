@@ -9,6 +9,7 @@ import Input from '../Input';
 import Field from './Field';
 
 storiesOf('Form/Field', module)
+  .addParameters({ component: Field })
   .add('Basic', () => (
     <Field label="Email" help="Help text">
       <Input placeholder="Email Address" />

@@ -5,15 +5,34 @@ import { ThemeContext } from '../../theme';
 import createStyles from './Progress.styles';
 
 interface OwnProps {
+  /** Bulma Color variable */
   color?: Color;
+
+  /** Styles to pass to the inner `Animated.View` */
   progressValueStyle?: StyleProp<ViewStyle>;
+
+  /** Used to calculate the percent filled
+   * @default 100
+   */
   max?: number;
+
+  /** Bulma Size variable
+   * @default normal
+   */
   size?: Size;
+
+  /** Used to calculate the perfect filled. If not provided, the Progress bar
+   * will render as indeterminate (animated)
+   */
   value?: number;
 }
 
 export type ProgressProps = OwnProps & ViewProps;
 
+/**
+ * Wraps `ActivityIndicator` to provide styles from the
+ * [Bulma Progress Bar element](https://bulma.io/documentation/elements/progress/)
+ * */
 const Progress: FC<ProgressProps> = (props: ProgressProps) => {
   const {
     color,

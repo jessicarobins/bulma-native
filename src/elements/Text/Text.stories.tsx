@@ -13,6 +13,7 @@ import {
 } from '../../constants';
 
 storiesOf('Elements/Text', module)
+  .addParameters({ component: Text })
   .add('Basic', () => (
     <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.

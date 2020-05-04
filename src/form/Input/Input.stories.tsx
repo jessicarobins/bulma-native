@@ -7,6 +7,7 @@ import { SIZES, COLORS } from '../../constants';
 import Input from './Input';
 
 storiesOf('Form/Input', module)
+  .addParameters({ component: Input })
   .add('Basic', () => <Input />)
   .add('Basic with Icon', () => <Input iconLeft="envelope" />)
   .add('Basic with two Icons', () => (

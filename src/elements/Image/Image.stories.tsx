@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
 });
 
 storiesOf('Elements/Image', module)
+  .addParameters({ component: Image })
   .add('Basic', () => <Image style={styles.image} source={tony} />)
   .add('Interactive', () => (
     <Image

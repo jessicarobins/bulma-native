@@ -277,12 +277,8 @@ const variables = {
     return this.controlBorderWidth;
   },
 
-  get buttonPaddingVertical() {
-    return 0.5 * this.baseSize;
-  },
-  get buttonPaddingHorizontal() {
-    return this.baseSize;
-  },
+  buttonPaddingVerticalMultiplier: 0.5,
+  buttonPaddingHorizontalMultipler: 1,
 
   get buttonDisabledBackgroundColor() {
     return this.schemeMain;

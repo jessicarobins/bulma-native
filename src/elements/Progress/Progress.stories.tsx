@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select, number } from '@storybook/addon-knobs';
+import { select, number } from '@storybook/addon-knobs';
 
 import { COLORS, SIZES } from '../../constants';
 import Progress from './Progress';
 
 storiesOf('Elements/Progress', module)
-  .addDecorator(withKnobs)
+  .addParameters({ component: Progress })
   .add('Basic', () => <Progress value={10} />)
   .add('Animated', () => <Progress />)
   .add('Interactive', () => (

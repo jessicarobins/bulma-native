@@ -7,20 +7,37 @@ import Flyout from '../../other/Flyout';
 import createStyles from './Select.styles';
 
 interface OwnProps {
+  /** Bulma Color variable */
   color?: Color;
+
+  /** Name of Icon to display on the left */
   iconName?: string;
+
+  /** @default false */
   loading?: boolean;
+
+  /** Callback triggered by a user selecting an option */
   onChange: (value: SelectOption) => void;
+
   options: SelectOption[];
   placeholder?: string;
+
+  /** @default false */
   rounded?: boolean;
+
+  /** Bulma Size variable
+   * @default normal
+   */
   size?: Size;
   style?: StyleProp<ViewStyle>;
+
+  /** Currently selected value */
   value: Nullable<SelectOption>;
 }
 
 export type SelectProps = OwnProps;
 
+/** Stand-in for [Bulma Form Select](https://bulma.io/documentation/form/select/) */
 const Select: FC<SelectProps> = (props: SelectProps) => {
   const {
     color,

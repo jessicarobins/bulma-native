@@ -15,6 +15,7 @@ export interface OwnProps {
 
 export type Props = OwnProps;
 
+/** Stand-in for the [Bulma Title and Subtitle elements](https://bulma.io/documentation/elements/title/)  */
 const Title: FC<Props> = (props: Props) => {
   const {
     subtitle,

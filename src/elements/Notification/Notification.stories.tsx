@@ -2,14 +2,14 @@ import React from 'react';
 import { Text } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 import { action } from '@storybook/addon-actions';
 import Notification from './Notification';
 import { COLORS } from '../../constants';
 
 storiesOf('Elements/Notification', module)
-  .addDecorator(withKnobs)
+  .addParameters({ component: Notification })
   .add('Basic', () => (
     <Notification isOpen>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.

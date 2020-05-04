@@ -8,7 +8,7 @@ export type Props = {
   /** Content to display inside the Message */
   children: React.ReactNode;
 
-  /** Corresponds to Bulma Color variables */
+  /** Corresponds to Bulma Colors */
   color?: BasicColor;
 
   /** Content to display inside message header */
@@ -21,7 +21,7 @@ export type Props = {
   onClose?: (event: React.BaseSyntheticEvent) => void;
 
   /**
-   * Corresponds to Bulma Size variables
+   * Corresponds to Bulma Sizes
    * @default normal
    * */
   size?: Size;

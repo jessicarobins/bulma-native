@@ -13,6 +13,7 @@ import {
 } from '../../constants';
 
 storiesOf('Elements/Title', module)
+  .addParameters({ component: Title })
   .add('Basic', () => <Title title="Title" subtitle="Subtitle" />)
   .add('Interactive', () => (
     <Title

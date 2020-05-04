@@ -15,18 +15,36 @@ import createStyles from './Input.styles';
 import { Icon } from '../../elements';
 
 interface OwnProps {
+  /** Bulma Color variable */
   color?: Color;
+
+  /** Styles to pass to the `View` wrapping the `TextInput` */
   containerStyle?: StyleProp<ViewStyle>;
+
+  /** Name of Icon to display on the left side of the Input */
   iconLeft?: string;
+
+  /** Name of Icon to display on the right side of the Input */
   iconRight?: string;
+
+  /** Styles to apply to the icon(s) */
   iconStyle?: StyleProp<ViewStyle>;
+
+  /** @default false */
   loading?: boolean;
+
+  /** @default false */
   rounded?: boolean;
+
+  /** Bulma Size variable
+   * @default normal
+   */
   size?: Size;
 }
 
 export type InputProps = OwnProps & TextInputProps;
 
+/** Stand-in for the [Bulma Form Input](https://bulma.io/documentation/form/input/)  */
 const Input: FC<InputProps> = (props: InputProps) => {
   const {
     color,

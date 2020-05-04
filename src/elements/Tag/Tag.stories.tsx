@@ -2,14 +2,14 @@ import React from 'react';
 import { Text } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { SIZES, COLORS } from '../../constants';
 import Tag from './Tag';
 
 storiesOf('Elements/Tag', module)
-  .addDecorator(withKnobs)
+  .addParameters({ component: Tag })
   .add('Basic', () => <Tag>Basic Tag</Tag>)
   .add('Interactive', () => (
     <Tag
