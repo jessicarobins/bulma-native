@@ -1,19 +1,34 @@
 import React, { FC, useContext } from 'react';
 import { ViewProps, View, Text } from 'react-native';
-import createStyles from './styles';
+import createStyles from './Message.styles';
 import { ThemeContext } from '../../theme';
 import { Delete } from '../../elements';
 
-type Props = {
+export type Props = {
+  /** Content to display inside the Message */
   children: React.ReactNode;
+
+  /** Corresponds to Bulma Colors */
   color?: BasicColor;
+
+  /** Content to display inside message header */
   header?: React.ReactNode | string;
+
+  /** Whether to display the message (to be controlled by an external component, and toggled via the onClose prop) */
   isOpen: boolean;
+
+  /** Optional callback on tap of the Delete button  */
   onClose?: (event: React.BaseSyntheticEvent) => void;
+
+  /**
+   * Corresponds to Bulma Sizes
+   * @default normal
+   * */
   size?: Size;
 } & ViewProps;
 
-const Message: FC<Props> = (props: Props) => {
+/** Based on the [Bulma Message Component](https://bulma.io/documentation/components/message/) */
+export const Message: FC<Props> = (props: Props) => {
   const {
     children,
     color,

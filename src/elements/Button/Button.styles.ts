@@ -3,13 +3,12 @@ import { StyleSheet } from 'react-native';
 import { getColor, getInvertColor } from '../../theme/color';
 import { getTextSize } from '../../theme/text';
 import { Theme } from '../../theme/ThemeProvider';
-import { theme } from '../../theme';
 
 const getColorStyles = (
   variant: ButtonVariant,
   color: Nullable<Color>,
   isStatic: boolean,
-  userTheme: Theme,
+  theme: Theme,
 ): { backgroundColor: string; borderColor: string; textColor: string } => {
   if (isStatic) {
     return {
@@ -19,10 +18,8 @@ const getColorStyles = (
     };
   }
 
-  const colorHex =
-    getColor(color, userTheme) || userTheme.buttonBackgroundColor;
-  const invertedColorHex =
-    getInvertColor(color, userTheme) || userTheme.buttonColor;
+  const colorHex = getColor(color, theme) || theme.buttonBackgroundColor;
+  const invertedColorHex = getInvertColor(color, theme) || theme.buttonColor;
 
   switch (variant) {
     case 'outline':
@@ -47,21 +44,26 @@ const getColorStyles = (
     default:
       return {
         backgroundColor: colorHex,
-        borderColor: color ? 'transparent' : userTheme.buttonBorderColor,
+        borderColor: color ? 'transparent' : theme.buttonBorderColor,
         textColor: invertedColorHex,
       };
   }
 };
 
-const getRadiusStyles = (size: Size, rounded: boolean, userTheme: Theme) => {
-  let paddingHorizontal = userTheme.buttonPaddingHorizontal;
-  let borderRadius = userTheme.controlRadius;
+const getRadiusStyles = (
+  size: Size,
+  rounded: boolean,
+  theme: Theme,
+  fontSize: number,
+) => {
+  let paddingHorizontal = theme.buttonPaddingHorizontalMultipler * fontSize;
+  let borderRadius = theme.controlRadius;
 
   if (rounded) {
-    paddingHorizontal *= 0.25 * userTheme.baseSize;
-    borderRadius = userTheme.radiusRounded;
+    paddingHorizontal *= 0.25 * theme.baseSize;
+    borderRadius = theme.radiusRounded;
   } else if (size === 'small') {
-    borderRadius = userTheme.radiusSmall;
+    borderRadius = theme.radiusSmall;
   }
 
   return { borderRadius, paddingHorizontal };
@@ -89,21 +91,24 @@ const getButtonStyle = (
     size: Size;
     variant: ButtonVariant;
   },
-  userTheme: Theme,
+  theme: Theme,
 ) => {
   const { textColor, backgroundColor, borderColor } = getColorStyles(
     variant,
     color,
     isStatic,
-    userTheme,
+    theme,
   );
+  const fontSize = getTextSize(size, theme);
   const { borderRadius, paddingHorizontal } = getRadiusStyles(
     size,
     rounded,
-    userTheme,
+    theme,
+    fontSize,
   );
 
-  const fontSize = getTextSize(size, userTheme);
+  const buttonPaddingHorizontal =
+    fontSize * theme.buttonPaddingHorizontalMultipler;
 
   return StyleSheet.create({
     activityIndicator: {
@@ -113,27 +118,25 @@ const getButtonStyle = (
       alignItems: 'center',
       backgroundColor,
       borderColor,
-      borderWidth: userTheme.buttonBorderWidth,
+      borderWidth: theme.buttonBorderWidth,
       borderRadius,
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      opacity: disabled ? userTheme.buttonDisabledOpacity : 1,
-      paddingVertical: userTheme.buttonPaddingVertical,
+      opacity: disabled ? theme.buttonDisabledOpacity : 1,
+      paddingVertical: theme.buttonPaddingVerticalMultiplier * fontSize,
       paddingHorizontal,
     },
     icon: {
       color: textColor,
-      marginHorizontal: hasChildren
-        ? 0
-        : -0.3 * userTheme.buttonPaddingHorizontal,
+      marginHorizontal: hasChildren ? 0 : -0.3 * buttonPaddingHorizontal,
     },
     text: {
       color: textColor,
       textAlign: 'center',
       fontSize,
-      marginLeft: hasIconLeft ? 0.5 * userTheme.buttonPaddingHorizontal : 0,
-      marginRight: hasIconRight ? 0.5 * userTheme.buttonPaddingHorizontal : 0,
+      marginLeft: hasIconLeft ? 0.5 * buttonPaddingHorizontal : 0,
+      marginRight: hasIconRight ? 0.5 * buttonPaddingHorizontal : 0,
     },
   });
 };

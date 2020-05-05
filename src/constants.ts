@@ -30,6 +30,13 @@ export const BASIC_COLORS = [
   'black',
 ] as const;
 
+export const BUTTON_VARIANTS = [
+  'solid',
+  'outline',
+  'inverted',
+  'invertedOutline',
+] as const;
+
 export const COLORS = [
   ...BASIC_COLORS,
   'primaryLight',

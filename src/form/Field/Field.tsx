@@ -1,19 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Text, View } from 'react-native';
 import { useTheme } from '../../theme';
 import createStyles from './Field.styles';
 
 export interface OwnProps {
-  children: React.ReactNode;
+  /** An `Input` element and any add-ons */
+  children: ReactNode;
+
+  /** Bulma Color variable */
   color?: Color;
+
+  /** Help text to display below the `Input` */
   help?: string;
+
+  /** @default false */
   horizontal?: boolean;
+
+  /** Label text to display above the `Input` */
   label?: string;
+
+  /** Bulma Size variable
+   * @default normal
+   */
   size?: Size;
 }
 
 export type FieldProps = OwnProps;
 
+/**
+ * Stand-in for the [Bulma Field element](https://bulma.io/documentation/form/general/).
+ * Wraps any number of form elements to provides styling and spacing
+ */
 const Field: FC<FieldProps> = (props: FieldProps) => {
   const { color, horizontal = false, size = 'normal' } = props;
 

@@ -1,0 +1,78 @@
+import { Story } from '@storybook/addon-docs/blocks';
+
+<Meta title="Overview/Theming" />
+
+# Theming
+
+Bulma provides [an exhaustive list of variables](https://bulma.io/documentation/customize/variables/) 
+useful in theming and customizing its components. Bulma Native does too!
+
+## Using the theme in your components
+
+All Bulma Native components are already hooked into the application theme. If you would like to 
+use the same theme variables in your own custom components, Bulma Native exports a `useTheme` hook.
+Simply add the hook to your component and have access to all of the theme variables.
+
+```js
+import React from 'react';
+import { useTheme, Text } from 'bulma-native';
+
+export const MyCoolComponent = () => {
+  const theme = useTheme();
+
+  return (
+    <Text style={{backgroundColor: theme.colors.primary}}>
+      It's text with a primary-colored background!
+    </Text>
+  )
+}
+```
+
+## Defining a custom theme
+
+Bulma Native ships with the same default theme as Bulma. However, if you would like to customize any of 
+the theme variables, you will need to wrap your app in an `ApplicationProvider`
+
+Simply import `theme` and override any of the theme variables with your customizations.
+
+<Story id="customization-theming--basic" />
+
+```js
+// App.js
+import React from 'react';
+import { ApplicationProvider, Button, Text, theme } from 'bulma-native';
+
+const myCustomTheme = {
+  ...theme,
+  color: {
+    ...theme.colors,
+    primary: 'purple',
+  }
+}
+
+const Home = () => (
+  <Button
+    color="primary"
+    variant="solid"
+  >
+    <Text>Custom Button</Text>
+  </Button>
+);
+
+export default () => (
+  <ApplicationProvider theme={myCustomTheme}>
+    <Home />
+  </ApplicationProvider>
+);
+```
+
+The full list of variables available for customization is 
+[available here](https://github.com/jessicarobins/bulma-native/blob/master/src/theme/variables.ts).
+
+### A note on variables
+Some variables end in `-Multiplier`. This is because React Native doesn't have a built in concept of 
+`rem` or `em`. Any variable that ends in `-Multiplier` will be multiplied by the font size of the 
+component.
+
+For example, a `<Button size="large />` will have a horizontal padding equal to 
+`theme.buttonPaddingHorizontalMultipler * theme.sizeLarge`

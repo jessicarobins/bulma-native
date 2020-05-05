@@ -1,8 +1,8 @@
 import React, { FC, useContext } from 'react';
-import { StyleProp, TextStyle } from 'react-native';
+import { StyleProp, TextStyle, View } from 'react-native';
 import { ThemeContext } from '../../theme';
 import Text, { Props as TextProps } from '../Text';
-import createStyles from './styles';
+import createStyles from './Title.styles';
 
 export interface OwnProps {
   subtitle?: string;
@@ -15,6 +15,7 @@ export interface OwnProps {
 
 export type Props = OwnProps;
 
+/** Stand-in for the [Bulma Title and Subtitle elements](https://bulma.io/documentation/elements/title/)  */
 const Title: FC<Props> = (props: Props) => {
   const {
     subtitle,
@@ -28,16 +29,21 @@ const Title: FC<Props> = (props: Props) => {
   const titleSize = titleProps?.size ?? '3';
   const subtitleSize = subtitleProps?.size ?? '5';
 
-  const styles = createStyles(
-    { hasTitle: !!title, subtitleSize, titleSize },
-    theme,
-  );
+  const styles = createStyles({ subtitleSize, titleSize }, theme);
 
-  const finalTitleStyle = [styles.title, titleStyle];
-  const finalSubtitleStyle = [styles.subtitle, subtitleStyle];
+  const finalTitleStyle = [
+    styles.title,
+    !!subtitle && styles.titleWithSubtitle,
+    titleStyle,
+  ];
+  const finalSubtitleStyle = [
+    styles.subtitle,
+    !!title && styles.subtitleWithTitle,
+    subtitleStyle,
+  ];
 
   return (
-    <>
+    <View>
       {title && (
         <Text
           style={finalTitleStyle}
@@ -60,7 +66,7 @@ const Title: FC<Props> = (props: Props) => {
           {subtitle}
         </Text>
       )}
-    </>
+    </View>
   );
 };
 

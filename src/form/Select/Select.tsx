@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { ViewStyle, StyleProp, TouchableOpacity } from 'react-native';
+import { ViewStyle, StyleProp, TouchableOpacity, View } from 'react-native';
 
 import { ThemeContext } from '../../theme';
 import { Button, Text } from '../../elements';
@@ -7,20 +7,37 @@ import Flyout from '../../other/Flyout';
 import createStyles from './Select.styles';
 
 interface OwnProps {
+  /** Bulma Color variable */
   color?: Color;
+
+  /** Name of Icon to display on the left */
   iconName?: string;
+
+  /** @default false */
   loading?: boolean;
+
+  /** Callback triggered by a user selecting an option */
   onChange: (value: SelectOption) => void;
+
   options: SelectOption[];
   placeholder?: string;
+
+  /** @default false */
   rounded?: boolean;
+
+  /** Bulma Size variable
+   * @default normal
+   */
   size?: Size;
   style?: StyleProp<ViewStyle>;
+
+  /** Currently selected value */
   value: Nullable<SelectOption>;
 }
 
 export type SelectProps = OwnProps;
 
+/** Stand-in for [Bulma Form Select](https://bulma.io/documentation/form/select/) */
 const Select: FC<SelectProps> = (props: SelectProps) => {
   const {
     color,
@@ -42,7 +59,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
   };
 
   return (
-    <>
+    <View>
       <Button
         iconLeft={iconName}
         iconLeftProps={{ style: styles.buttonIconLeft }}
@@ -57,7 +74,6 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
       </Button>
       <Flyout
         open={open}
-        onBackdropPress={() => setOpen(false)}
         style={[styles.flyout, rounded && styles.flyoutRounded]}
       >
         {options.map((option) => (
@@ -69,7 +85,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
           </TouchableOpacity>
         ))}
       </Flyout>
-    </>
+    </View>
   );
 };
 

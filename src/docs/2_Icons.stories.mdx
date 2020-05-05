@@ -1,0 +1,43 @@
+<Meta title="Overview/Icons" />
+
+# Setting up Icons
+
+## Installation
+
+If you would like to use components that include icons, and you are not using Expo, you will also need
+to add [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons) and follow its 
+installation instructions.
+
+If you are using Expo, Icons are already built in via the [@expo/vector-icons](https://docs.expo.io/guides/icons/) 
+library.
+
+## Usage
+
+To use icons in Bulma Native components, pass an `iconPack` to the root `ApplicationProvider`
+
+```js
+// App.js
+import React from 'react';
+import { ApplicationProvider, Button, Text, theme } from 'bulma-native';
+
+// Using expo
+import { FontAwesome5 } from '@expo/vector-icons';
+
+// Not using Expo
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+const Home = () => (
+  <Button
+    color="primary"
+    iconLeft="beer"
+  >
+    Icon Button
+  </Button>
+);
+
+export default () => (
+  <ApplicationProvider iconPack={FontAwesome5} theme={theme}>
+    <Home />
+  </ApplicationProvider>
+);
+```

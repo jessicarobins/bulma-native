@@ -277,12 +277,8 @@ const variables = {
     return this.controlBorderWidth;
   },
 
-  get buttonPaddingVertical() {
-    return 0.5 * this.baseSize;
-  },
-  get buttonPaddingHorizontal() {
-    return this.baseSize;
-  },
+  buttonPaddingVerticalMultiplier: 0.5,
+  buttonPaddingHorizontalMultipler: 1,
 
   get buttonDisabledBackgroundColor() {
     return this.schemeMain;
@@ -359,16 +355,10 @@ const variables = {
 
   // Title
   titleFamily: false,
-  get titleLineHeightMultiplier() {
-    return 1.125;
-  },
+  titleLineHeightMultiplier: 1.125,
   subtitleFamily: false,
-  get subtitleLineheightMultiplier() {
-    return 1.25;
-  },
-  get subtitleNegativeMargin() {
-    return -1.25 * this.baseSize;
-  },
+  subtitleLineheightMultiplier: 1.25,
+  subtitleNegativeMarginMultiplier: -1.25,
 
   /* COMPONENTS */
 
