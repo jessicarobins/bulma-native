@@ -82,7 +82,7 @@ const createStyles = (
     image: {
       ...getAspectRatio(aspectRatio),
       borderRadius: rounded ? theme.radiusRounded : 0,
-      width: '100%',
+      flex: 1,
       resizeMode: 'cover',
     },
   });

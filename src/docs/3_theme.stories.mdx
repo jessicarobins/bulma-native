@@ -1,9 +1,32 @@
+import { Story } from '@storybook/addon-docs/blocks';
+
 <Meta title="Overview/Theming" />
 
 # Theming
 
 Bulma provides [an exhaustive list of variables](https://bulma.io/documentation/customize/variables/) 
 useful in theming and customizing its components. Bulma Native does too!
+
+## Using the theme in your components
+
+All Bulma Native components are already hooked into the application theme. If you would like to 
+use the same theme variables in your own custom components, Bulma Native exports a `useTheme` hook.
+Simply add the hook to your component and have access to all of the theme variables.
+
+```js
+import React from 'react';
+import { useTheme, Text } from 'bulma-native';
+
+export const MyCoolComponent = () => {
+  const theme = useTheme();
+
+  return (
+    <Text style={{backgroundColor: theme.colors.primary}}>
+      It's text with a primary-colored background!
+    </Text>
+  )
+}
+```
 
 ## Defining a custom theme
 
@@ -12,20 +35,28 @@ the theme variables, you will need to wrap your app in an `ApplicationProvider`
 
 Simply import `theme` and override any of the theme variables with your customizations.
 
-```
+<Story id="customization-theming--basic" />
+
+```js
 // App.js
 import React from 'react';
-import { ApplicationProvider, Text, theme } from 'bulma-native';
+import { ApplicationProvider, Button, Text, theme } from 'bulma-native';
 
 const myCustomTheme = {
   ...theme,
-  primary: 'purple',
+  color: {
+    ...theme.colors,
+    primary: 'purple',
+  }
 }
 
 const Home = () => (
-  <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text color="primary">Home screen</Text>
-  </Layout>
+  <Button
+    color="primary"
+    variant="solid"
+  >
+    <Text>Custom Button</Text>
+  </Button>
 );
 
 export default () => (

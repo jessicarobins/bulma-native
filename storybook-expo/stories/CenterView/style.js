@@ -2,8 +2,8 @@ export default {
   main: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'stretch',
+    alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    padding: 10,
+    padding: 20,
   },
 };

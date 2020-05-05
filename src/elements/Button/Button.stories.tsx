@@ -5,10 +5,8 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { select, boolean, text } from '@storybook/addon-knobs';
 
-import { SIZES, COLORS } from '../../constants';
+import { BUTTON_VARIANTS, SIZES, COLORS } from '../../constants';
 import Button from './Button';
-
-const VARIANTS = ['solid', 'outline', 'inverted', 'invertedOutline'] as const;
 
 storiesOf('Elements/Button', module)
   .addParameters({ component: Button })
@@ -22,7 +20,7 @@ storiesOf('Elements/Button', module)
       rounded={boolean('rounded', false)}
       size={select('size', SIZES, 'normal')}
       static={boolean('static', false)}
-      variant={select('variant', VARIANTS, 'solid')}
+      variant={select('variant', BUTTON_VARIANTS, 'solid')}
     >
       <Text>Default Button</Text>
     </Button>
@@ -38,7 +36,7 @@ storiesOf('Elements/Button', module)
       onPress={action('clicked-text')}
       rounded={boolean('rounded', false)}
       size={select('size', SIZES, 'normal')}
-      variant={select('variant', VARIANTS, 'solid')}
+      variant={select('variant', BUTTON_VARIANTS, 'solid')}
     >
       <Text>Default Button</Text>
     </Button>
@@ -53,6 +51,6 @@ storiesOf('Elements/Button', module)
       onPress={action('clicked-text')}
       rounded={boolean('rounded', false)}
       size={select('size', SIZES, 'normal')}
-      variant={select('variant', VARIANTS, 'solid')}
+      variant={select('variant', BUTTON_VARIANTS, 'solid')}
     />
   ));

@@ -3,7 +3,7 @@ import { ThemeProvider, IconProvider, Theme } from '../../theme';
 
 type Props = {
   children: React.ReactNode;
-  iconPack: React.ReactNode;
+  iconPack?: React.ReactNode;
   theme: Theme;
 };
 
