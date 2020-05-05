@@ -1,0 +1,47 @@
+<Meta title="Overview/Theming" />
+
+# Theming
+
+Bulma provides [an exhaustive list of variables](https://bulma.io/documentation/customize/variables/) 
+useful in theming and customizing its components. Bulma Native does too!
+
+## Defining a custom theme
+
+Bulma Native ships with the same default theme as Bulma. However, if you would like to customize any of 
+the theme variables, you will need to wrap your app in an `ApplicationProvider`
+
+Simply import `theme` and override any of the theme variables with your customizations.
+
+```
+// App.js
+import React from 'react';
+import { ApplicationProvider, Text, theme } from 'bulma-native';
+
+const myCustomTheme = {
+  ...theme,
+  primary: 'purple',
+}
+
+const Home = () => (
+  <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text color="primary">Home screen</Text>
+  </Layout>
+);
+
+export default () => (
+  <ApplicationProvider theme={myCustomTheme}>
+    <Home />
+  </ApplicationProvider>
+);
+```
+
+The full list of variables available for customization is 
+[available here](https://github.com/jessicarobins/bulma-native/blob/master/src/theme/variables.ts).
+
+### A note on variables
+Some variables end in `-Multiplier`. This is because React Native doesn't have a built in concept of 
+`rem` or `em`. Any variable that ends in `-Multiplier` will be multiplied by the font size of the 
+component.
+
+For example, a `<Button size="large />` will have a horizontal padding equal to 
+`theme.buttonPaddingHorizontalMultipler * theme.sizeLarge`
