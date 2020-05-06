@@ -1,6 +1,6 @@
 {
   "name": "@jrobins/bulma-native",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Bulma Native is a set of components for React Native based on the design of Bulma",
   "source": "src/index.ts",
   "module": "dist/index.module.js",
