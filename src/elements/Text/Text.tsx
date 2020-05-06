@@ -3,7 +3,7 @@ import { Text as RNText, TextProps as RNTextProps } from 'react-native';
 import createStyles from './Text.styles';
 import { ThemeContext } from '../../theme';
 
-export interface OwnProps {
+interface OwnProps {
   /** @default left */
   alignment?: TextAlignment;
   children: React.ReactNode;
@@ -21,12 +21,12 @@ export interface OwnProps {
   weight?: TextWeight;
 }
 
-export type Props = OwnProps & RNTextProps;
+export type TextProps = OwnProps & RNTextProps;
 
 /** Wraps `Text` to add Bulma [typography helpers](https://bulma.io/documentation/modifiers/typography-helpers/)
  * and default text styling
  */
-const Text: FC<Props> = (props: Props) => {
+const Text: FC<TextProps> = (props: TextProps) => {
   const {
     alignment = 'left',
     children,

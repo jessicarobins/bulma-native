@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "lib": ["dom", "esnext"],
-    "module": "commonjs",
+    "module": "es6",
     "moduleResolution": "node",
     "declaration": true,
     "outDir": "./dist",

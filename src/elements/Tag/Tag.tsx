@@ -4,7 +4,7 @@ import createStyles from './Tag.styles';
 import { ThemeContext } from '../../theme';
 import Delete from '../Delete';
 
-type Props = {
+export type TagProps = {
   children: React.ReactNode;
 
   /** Bulma Color variable */
@@ -28,7 +28,7 @@ type Props = {
 } & ViewProps;
 
 /** Stand-in for the [Bulma Tag element](https://bulma.io/documentation/elements/tag/) */
-const Tag: FC<Props> = (props: Props) => {
+const Tag: FC<TagProps> = (props: TagProps) => {
   const {
     children,
     color,

@@ -4,7 +4,7 @@ import createStyles from './Message.styles';
 import { ThemeContext } from '../../theme';
 import { Delete } from '../../elements';
 
-export type Props = {
+export type MessageProps = {
   /** Content to display inside the Message */
   children: React.ReactNode;
 
@@ -28,7 +28,7 @@ export type Props = {
 } & ViewProps;
 
 /** Based on the [Bulma Message Component](https://bulma.io/documentation/components/message/) */
-export const Message: FC<Props> = (props: Props) => {
+export const Message: FC<MessageProps> = (props: MessageProps) => {
   const {
     children,
     color,

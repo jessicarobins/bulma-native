@@ -1,6 +1,13 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "rollup -c",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -73,6 +80,8 @@
     "react-native-vector-icons": "^6.6.0",
     "react-native-web": "^0.12.2",
     "react-syntax-highlighter": "^12.2.1",
+    "rollup": "^2.8.0",
+    "rollup-plugin-typescript2": "^0.27.0",
     "storybook-addon-jsx": "^7.2.3",
     "typescript": "~3.8.3",
     "url-loader": "^4.1.0",
