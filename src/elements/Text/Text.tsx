@@ -21,12 +21,12 @@ export interface OwnProps {
   weight?: TextWeight;
 }
 
-export type Props = OwnProps & RNTextProps;
+export type TextProps = OwnProps & RNTextProps;
 
 /** Wraps `Text` to add Bulma [typography helpers](https://bulma.io/documentation/modifiers/typography-helpers/)
  * and default text styling
  */
-const Text: FC<Props> = (props: Props) => {
+const Text: FC<TextProps> = (props: TextProps) => {
   const {
     alignment = 'left',
     children,

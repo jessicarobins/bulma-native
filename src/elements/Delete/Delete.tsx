@@ -27,13 +27,13 @@ interface OwnProps {
   size?: IconSize;
 }
 
-type Props = OwnProps & TouchableOpacityProps;
+export type DeleteProps = OwnProps & TouchableOpacityProps;
 
 /**
  * Icon Button that serves as a stand-in for the [Bulma Delete element](https://bulma.io/documentation/elements/delete/)
  * Requires `iconPack` to be supplied to the root `ApplicationProvider` component
  * */
-const Delete: FC<Props> = (props: Props) => {
+const Delete: FC<DeleteProps> = (props: DeleteProps) => {
   const {
     iconName = 'times',
     iconStyle = {},

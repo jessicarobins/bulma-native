@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { StyleProp, TextStyle, View } from 'react-native';
 import { ThemeContext } from '../../theme';
-import Text, { Props as TextProps } from '../Text';
+import Text, { TextProps } from '../Text';
 import createStyles from './Title.styles';
 
 export interface OwnProps {
@@ -13,10 +13,10 @@ export interface OwnProps {
   titleStyle?: StyleProp<TextStyle>;
 }
 
-export type Props = OwnProps;
+export type TitleProps = OwnProps;
 
 /** Stand-in for the [Bulma Title and Subtitle elements](https://bulma.io/documentation/elements/title/)  */
-const Title: FC<Props> = (props: Props) => {
+const Title: FC<TitleProps> = (props: TitleProps) => {
   const {
     subtitle,
     subtitleProps,

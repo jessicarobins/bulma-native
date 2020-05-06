@@ -4,7 +4,7 @@ import createStyles from './Notification.styles';
 import { ThemeContext } from '../../theme';
 import Delete from '../Delete';
 
-type Props = {
+export type NotificationProps = {
   children: React.ReactNode;
 
   /** Bulma Color variable */
@@ -22,7 +22,7 @@ type Props = {
 } & ViewProps;
 
 /** Stand-in for the [Bulma Notification element](https://bulma.io/documentation/elements/notification/) */
-const Notification: FC<Props> = (props: Props) => {
+const Notification: FC<NotificationProps> = (props: NotificationProps) => {
   const {
     children,
     color,
