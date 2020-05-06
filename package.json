@@ -1,4 +1,6 @@
 {
+  "name": "@jrobins/bulma-native",
+  "description": "React Native port of Bulma components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -87,7 +89,7 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0"
   },
-  "private": true,
+  "private": false,
   "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
