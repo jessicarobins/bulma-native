@@ -15,7 +15,7 @@ Simply add the hook to your component and have access to all of the theme variab
 
 ```js
 import React from 'react';
-import { useTheme, Text } from 'bulma-native';
+import { useTheme, Text } from '@jrobins/bulma-native';
 
 export const MyCoolComponent = () => {
   const theme = useTheme();
@@ -40,7 +40,7 @@ Simply import `theme` and override any of the theme variables with your customiz
 ```js
 // App.js
 import React from 'react';
-import { ApplicationProvider, Button, Text, theme } from 'bulma-native';
+import { ApplicationProvider, Button, Text, theme } from '@jrobins/bulma-native';
 
 const myCustomTheme = {
   ...theme,

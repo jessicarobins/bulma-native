@@ -1,7 +1,11 @@
 {
+  "name": "@jrobins/bulma-native",
+  "version": "0.0.0",
+  "description": "Bulma Native is a set of components for React Native based on the design of Bulma",
+  "source": "src/index.ts",
+  "module": "dist/index.module.js",
   "scripts": {
-    "source": "src/index.ts",
-    "module": "dist/index.module.js",
+    "build": "microbundle --external react,react-dom,react-native --compress",
     "expo:start": "expo start",
     "expo:android": "expo start --android",
     "expo:ios": "expo start --ios",
@@ -65,7 +69,7 @@
     "expo": "~37.0.3",
     "fork-ts-checker-webpack-plugin": "^4.1.3",
     "metro-react-native-babel-preset": "^0.59.0",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.0-next.9",
     "prettier": "^2.0.4",
     "react": "~16.9.0",
     "react-docgen-typescript-loader": "^3.7.2",
@@ -79,15 +83,5 @@
     "typescript": "~3.8.3",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0"
-  },
-  "private": true,
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/__mocks__/globalMock.js"
-    ]
   }
 }
