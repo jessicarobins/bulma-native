@@ -96,5 +96,6 @@
     "setupFilesAfterEnv": [
       "<rootDir>/__mocks__/globalMock.js"
     ]
-  }
+  },
+  "version": "0.0.2"
 }
