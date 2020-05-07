@@ -1,4 +1,5 @@
 dist/
+sb-dist/
 node_modules/**/*
 .expo/*
 npm-debug.*
