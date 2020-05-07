@@ -13,7 +13,7 @@ get started. Bulma Native will work with both Expo and vanilla React Native proj
 ### Install
 
 ```bash
-yarn add bulma-native
+yarn add @jrobins/bulma-native
 ```
 
 #### Installing Icons
@@ -25,9 +25,17 @@ installation instructions.
 If you are using Expo, Icons are already built in via the [@expo/vector-icons](https://docs.expo.io/guides/icons/)
 library.
 
-## Previewing components
+For more information on icon installation and usage, see [the Bulma Native Storybook page for Icons](https://jessicarobins.github.io/bulma-native/?path=/docs/overview-icons--page)
 
-### Component preview notes
+## Documentation
+
+Documentation for the Bulma Native component library lives in the [Bulma Native Storybook](https://jessicarobins.github.io/bulma-native/?path=/docs/overview-icons--page). There, you can preview components, view and interactively set their props, and copy sample code. This Storybook also contains information on [setting up theming](https://jessicarobins.github.io/bulma-native/?path=/docs/overview-theming--page).
+
+### Caveat
 
 The components in this Storybook were adapted to web using [React Native Web](https://github.com/necolas/react-native-web).
 As such, components are not guaranteed to be 100% accurate reflection of what they would look like on a device.
+
+#### Sub-caveat
+
+The `Image` component relies on a prop specific to React Native. As such, it does not display on web. I am currently working on a solution for this, as well as a solution for previewing components using Expo Snacks.
