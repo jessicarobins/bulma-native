@@ -19,6 +19,7 @@
     "sb:start": "start-storybook -p 9001 -c ./.storybook-web",
     "sb:deploy": "yarn sb:build && gh-pages -d ./sb-dist",
     "lint": "eslint . --ext .ts,.tsx",
+    "prepublish": "rm -rf dist/ && yarn build",
     "prettier": "prettier --check \"{shared,src}/**/*.{ts,tsx}\"",
     "prettier:fix": "prettier --write \"**/*.{ts,tsx}\"",
     "ts:lint": "tsc --noEmit",
@@ -101,5 +102,5 @@
       "<rootDir>/__mocks__/globalMock.js"
     ]
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
