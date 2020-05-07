@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { useTheme } from '../../theme';
 import createStyles from './Field.styles';
 
-export interface OwnProps {
+interface OwnProps {
   /** An `Input` element and any add-ons */
   children: ReactNode;
 

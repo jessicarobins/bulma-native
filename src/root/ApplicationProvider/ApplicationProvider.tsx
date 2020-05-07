@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import { ThemeProvider, IconProvider, Theme } from '../../theme';
 
-type Props = {
+export type ApplicationProviderProps = {
   children: React.ReactNode;
   iconPack?: React.ReactNode;
   theme: Theme;
 };
 
-const ApplicationProvider: FC<Props> = (props: Props) => {
+const ApplicationProvider: FC<ApplicationProviderProps> = (
+  props: ApplicationProviderProps,
+) => {
   return (
     <IconProvider value={props.iconPack}>
       <ThemeProvider value={props.theme}>{props.children}</ThemeProvider>
