@@ -1,18 +1,18 @@
 import React, { FC } from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { View } from 'react-native';
 import styles from './Backdrop.styles';
 
 type Props = {
-  isOpen: boolean;
-  onBackdropPress: (e: React.BaseSyntheticEvent) => void;
+  open: boolean;
+  onPress: (e: React.BaseSyntheticEvent) => void;
 };
 
 const Backdrop: FC<Props> = (props: Props) => {
-  if (props.isOpen) {
+  if (props.open) {
     return (
-      <TouchableWithoutFeedback onPress={props.onBackdropPress}>
+      <View onTouchEnd={props.onPress}>
         <View style={styles.backdrop} />
-      </TouchableWithoutFeedback>
+      </View>
     );
   }
 

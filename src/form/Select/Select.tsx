@@ -5,6 +5,7 @@ import { ThemeContext } from '../../theme';
 import { Button, Text } from '../../elements';
 import Flyout from '../../other/Flyout';
 import createStyles from './Select.styles';
+import Backdrop from '../../other/Backdrop';
 
 interface OwnProps {
   /** Bulma Color variable */
@@ -60,6 +61,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
 
   return (
     <View>
+      <Backdrop onPress={() => setOpen(false)} open={open} />
       <Button
         iconLeft={iconName}
         iconLeftProps={{ style: styles.buttonIconLeft }}
