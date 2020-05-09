@@ -1,5 +1,8 @@
 import { addons } from '@storybook/addons';
 
+window.STORYBOOK_GA_ID = process.env.STORYBOOK_GA_ID;
+window.STORYBOOK_REACT_GA_OPTIONS = {};
+
 addons.setConfig({
   /**
    * show story component as full screen
