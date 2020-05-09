@@ -30,5 +30,6 @@ module.exports = {
     '@storybook/addon-knobs/preset',
     '@storybook/addon-actions/register',
     'storybook-addon-jsx/register',
+    '@storybook/addon-google-analytics/register',
   ],
 };

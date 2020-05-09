@@ -50,5 +50,9 @@ module.exports = async ({ config, mode }) => {
     react: path.resolve('./node_modules/react'),
   };
 
+  config.plugins.push(
+    new webpack.EnvironmentPlugin(['STORYBOOK_GA_ID', 'STORYBOOK_GA_ID']),
+  );
+
   return config;
 };
